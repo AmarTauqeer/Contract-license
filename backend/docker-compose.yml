@@ -1,0 +1,11 @@
+version: "3"
+services:
+  contractlicense:
+    container_name: contract-license-act
+    hostname: contract-license-act
+    restart: always
+    build: ./
+    ports:
+      - 5005:5005
+    volumes:
+      - ./:/Contract-license/backend
