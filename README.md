@@ -1,4 +1,4 @@
-# Automated Contracting Tool Improved with SHACL Repairs
+# Automated Contracting Tool Improved with SHACL and Licenses
 
 Automated Contracting Tool, a component of smashHit. smashHit is a Horizon 2020 project with the primary objective of creating a secure and trustworthy data-sharing platform with a focus on consent and contract management in a distributed environment such as the automotiveindustry, insurance and smart cities following GDPR.
 
@@ -12,7 +12,7 @@ Automated Contracting Tool, a component of smashHit. smashHit is a Horizon 2020 
 - [unittest](https://docs.python.org/3/library/unittest.html)
 
 ## Steps to be followed
-- git clone https://github.com/AmarTauqeer/Contract-shacl-repairs.git
+- git clone https://github.com/AmarTauqeer/Contract-license.git
 - go to the backend folder
 - update the .env file
 - sudo docker-compose -f docker-compose.yml up
@@ -44,7 +44,7 @@ python -m flask run
 
 
 ## Contracts System Architecture
-![](/backend/images/semantic-contract-architecture.png)
+![](/backend/images/ccv_extended_design.png)
 
 ## Contracts REST APIs Endpoints
 ![](/backend/images/contract-api-first-part.png)
@@ -53,8 +53,8 @@ python -m flask run
 ## Developer
 
 - Amar Tauqeer
-  amar.tauqeer@sti2.at, amar.tauqeer@gmail.com
-- Web: "https://amartauqeer.github.io/amar-tauqeer-portfolio/"
+  amar.tauqeer@sti2.at, amar.tauqeer@gmail.com, amar.tauqeer@wur.nl
+- Web: "https://amartauqeer.github.io/Portfolio-react-bootsrap-responsive/"
 - LinkedIn: "https://www.linkedin.com/in/amar-tauqeer/"
 
 ## Project
@@ -65,7 +65,7 @@ python -m flask run
 
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) [2023] [Amar Tauqeer]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions: 
