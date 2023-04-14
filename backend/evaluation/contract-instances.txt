@@ -1,261 +1,231 @@
 ============================
 {
   "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "1000",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
   "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
+  "ContractType": "Written",
   "Contractors": [
-    "string"
+      "c_001","c_002","c_003"
   ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
-  "Medium": "string",
-  "Obligations": [
-    "string"
-  ],
-  "Purpose": "string",
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "Medium": "online",
+  "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [
-    "string"
+    "s_001","s_002","s_003"
   ],
   "Terms": [
-    "string"
+    "term_001","term_002","term_003","term_004"
   ]
 }
 ===============================
 {
   "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
   "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
+  "ContractType": "Written",
   "Contractors": [
-    "string"
+      "c_001","c_002"
   ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
   "Medium": "online",
-  "Obligations": [
-    "string"
-  ],
-  "Purpose": "string",
-  "Signatures": [
-    "string"
-  ],
-  "Terms": [
-    "term_type_001"
-  ]
-}
-===============================
-{
-  "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
-  "ContractCategory": "categoryBusinessToConsumer",
-  "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
-  "Contractors": [
-    "c_001","c_002"
-  ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
-  "Medium": "online",
-  "Obligations": [
-    "string"
-  ],
-  "Purpose": "string",
-  "Signatures": [
-    "string"
-  ],
-  "Terms": [
-    "term_type_001"
-  ]
-}
-===============================
-{
-  "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
-  "ContractCategory": "categoryBusinessToConsumer",
-  "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
-  "Contractors": [
-    "c_001","c_002"
-  ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
-  "Medium": "online",
-  "Obligations": [
-    "string"
-  ],
-  "Purpose": "data selling",
-  "Signatures": [
-    "string"
-  ],
-  "Terms": [
-    "term_type_001"
-  ]
-}
-===============================
-{
-  "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
-  "ContractCategory": "categoryBusinessToConsumer",
-  "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
-  "Contractors": [
-    "c_001","c_002","c_003"
-  ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
-  "Medium": "online",
-  "Obligations": [
-    "string"
-  ],
-  "Purpose": "data selling",
-  "Signatures": [
-    "string"
-  ],
-  "Terms": [
-    "term_type_001"
-  ]
-}
-===============================
-{
-  "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
-  "ContractCategory": "categoryBusinessToConsumer",
-  "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
-  "Contractors": [
-    "c_001","c_002"
-  ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
-  "Medium": "online",
-  "Obligations": [
-    "ob_001","ob_002"
-  ],
-  "Purpose": "data selling",
-  "Signatures": [
-    "string"
-  ],
-  "Terms": [
-    "term_type_001"
-  ]
-}
-===============================
-{
-  "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
-  "ContractCategory": "categoryBusinessToConsumer",
-  "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
-  "Contractors": [
-    "c_001","c_002"
-  ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
-  "Medium": "online",
-  "Obligations": [
-    "ob_001","ob_002"
-  ],
-  "Purpose": "data selling",
+  "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [
     "s_001","s_002"
   ],
   "Terms": [
-    "term_type_001"
+    "term_001","term_002"
   ]
 }
 ===============================
 {
   "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
   "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
+  "ContractType": "Written",
   "Contractors": [
-    "c_003","c_004"
+      "string"
   ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
   "Medium": "online",
-  "Obligations": [
-    "ob_003","ob_004"
-  ],
-  "Purpose": "data selling",
+  "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [
-    "s_003","s_004"
+    "string"
   ],
   "Terms": [
-    "term_type_001"
+    "string"
   ]
 }
 ===============================
 {
   "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
   "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
+  "ContractType": "Written",
   "Contractors": [
-    "c_004","c_005"
+      "string"
   ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
   "Medium": "online",
-  "Obligations": [
-    "ob_004"
-  ],
-  "Purpose": "data selling",
+  "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [
-    "s_004","s_005"
+    "string"
   ],
   "Terms": [
-    "term_type_001"
+    "term_001"
   ]
 }
 ===============================
 {
   "ConsentId": "const_001",
-  "ConsiderationDescription": "data sharing",
-  "ConsiderationValue": "2000",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
   "ContractStatus": "statusCreated",
-  "ContractType": "wirtten",
+  "ContractType": "Written",
   "Contractors": [
-    "c_007","c_008"
+      "c_001","c_002"
   ],
-  "EffectiveDate": "2022-07-13T10:32:16.088Z",
-  "EndDate": "2023-07-13T10:32:16.088Z",
-  "ExecutionDate": "2022-07-13T10:32:16.089Z",
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
   "Medium": "online",
-  "Obligations": [
-    "ob_001","ob_002"
+  "Purpose": "data sharing between scott and Company ABC",
+  "Signatures": [
+    "string"
   ],
-  "Purpose": "data selling",
+  "Terms": [
+    "term_001"
+  ]
+}
+===============================
+{
+  "ConsentId": "const_001",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
+  "ContractCategory": "categoryBusinessToConsumer",
+  "ContractStatus": "statusCreated",
+  "ContractType": "Written",
+  "Contractors": [
+      "c_001","c_002","c_003"
+  ],
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "Medium": "online",
+  "Purpose": "data sharing between scott and Company ABC",
+  "Signatures": [
+    "string"
+  ],
+  "Terms": [
+    "term_001"
+  ]
+}
+===============================
+{
+  "ConsentId": "const_001",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
+  "ContractCategory": "categoryBusinessToConsumer",
+  "ContractStatus": "statusCreated",
+  "ContractType": "Written",
+  "Contractors": [
+      "c_001","c_002"
+  ],
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "Medium": "online",
+  "Purpose": "data sharing between scott and Company ABC",
+  "Signatures": [
+    "s_001"
+  ],
+  "Terms": [
+    "term_001"
+  ]
+}
+===============================
+{
+  "ConsentId": "const_001",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
+  "ContractCategory": "categoryBusinessToConsumer",
+  "ContractStatus": "statusCreated",
+  "ContractType": "Written",
+  "Contractors": [
+      "c_001","c_002"
+  ],
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "Medium": "online",
+  "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [
     "s_001","s_002"
   ],
   "Terms": [
-    "term_type_002"
+    "term_001"
+  ]
+}
+===============================
+{
+  "ConsentId": "const_001",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
+  "ContractCategory": "categoryBusinessToConsumer",
+  "ContractStatus": "statusCreated",
+  "ContractType": "Written",
+  "Contractors": [
+      "c_001","c_002","c_003"
+  ],
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "Medium": "online",
+  "Purpose": "data sharing between scott and Company ABC",
+  "Signatures": [
+    "s_001","s_002","s_003"
+  ],
+  "Terms": [
+    "term_001","term_002"
+  ]
+}
+===============================
+{
+  "ConsentId": "const_001",
+  "ConsiderationDescription": "data sharing between scott and Company ABC",
+  "ConsiderationValue": 400,
+  "ContractCategory": "categoryBusinessToConsumer",
+  "ContractStatus": "statusCreated",
+  "ContractType": "Written",
+  "Contractors": [
+      "c_001","c_002","c_002"
+  ],
+  "EffectiveDate": "2023-04-08T09:25:55.933Z",
+  "EndDate": "2024-04-08T09:25:55.933Z",
+  "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "Medium": "online",
+  "Purpose": "data sharing between scott and Company ABC",
+  "Signatures": [
+    "s_001","s_002","s_003"
+  ],
+  "Terms": [
+    "term_001","term_002","term_003"
   ]
 }
 ===============================

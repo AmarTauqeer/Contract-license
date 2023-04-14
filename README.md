@@ -36,19 +36,20 @@ python -m flask run
 
 - Create term types and companies.
 - Create contractors (need company id).
-- Create a contract with basic information except contract terms, contract obligations, and contract signatures.
+- Create a contract with basic information except contract terms, and contract signatures.
 - Use the contract id from the previous step and create contract terms, contract obligations and contract signatures.
 - Update the contract with terms, contractors and signatures.
 
 
 
 
-## Contracts System Architecture
+## data sharing System Architecture
 ![](/backend/images/ccv_extended_design.png)
 
 ## Contracts REST APIs Endpoints
-![](/backend/images/contract-api-first-part.png)
-![](/backend/images/contract-api-second-part.png)
+![](/backend/images/api-part-1.png)
+![](/backend/images/api-part-2.png)
+![](/backend/images/api-part-3.png)
 
 ## Developer
 

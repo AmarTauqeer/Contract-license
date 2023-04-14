@@ -1,132 +1,132 @@
 ====================================================
 {
-  "Address": "Technikerstrasse 7/008 6020 Innsbruck",
-  "CompanyId": "company id",
+  "Address": "Mariahelfer strasse 22",
+  "CompanyId": "comp_001",
   "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "amar.tauqeer@gmail.com",
-  "Name": "Amar",
-  "Phone": "+4368864133065",
-  "Role": "DataSubject",
-  "Territory": "Innsbruck",
-  "Vat": "dummy 111111"
-}
-===========================================
-{
-  "Address": "Technikerstrasse 20 6020 Innsbruck",
-  "CompanyId": "company id",
-  "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "amar.tauqeer@hotmail.com",
-  "Name": "Tauqeer",
-  "Phone": "+4368864133066",
-  "Role": "DataController",
-  "Territory": "Innsbruck",
-  "Vat": "dummy 222222"
-}
-===========================================
-{
-  "Address": "Mariahilfer strasse 100 1070 Vienna",
-  "CompanyId": "company id",
-  "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "amar.tauqeer@sti2.at",
-  "Name": "Amar Tauqeer",
-  "Phone": "+4368864133067",
-  "Role": "DataSubject",
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "companytemp@gmail.com",
+  "Name": "Company Temp",
+  "Phone": "+436886413433",
+  "Role": "DataProcessor",
   "Territory": "Vienna",
-  "Vat": "dummy 3333333"
+  "Vat": "3344566"
 }
 ===========================================
 {
-  "Address": "Lohbachhufer 6 6020 Innsbruck",
-  "CompanyId": "company id",
+  "Address": "Strom strasse 18 1200 Vienna",
+  "CompanyId": "comp_002",
   "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "abc@gmail.com",
-  "Name": "ABC",
-  "Phone": "+4368864133064",
-  "Role": "DataSubject",
-  "Territory": "Innsbruck",
-  "Vat": "dummy 44444"
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "Aslam@gmail.com",
+  "Name": "Aslam",
+  "Phone": "+4368864134000",
+  "Role": "DataOwner",
+  "Territory": "Vienna",
+  "Vat": "10101010"
 }
 ===========================================
 {
-  "Address": "Viktor Franz Hess strasse 1 6020 Innsbruck",
-  "CompanyId": "company id",
+  "Address": "Taborstrasse 10 1020 Vienna",
+  "CompanyId": "comp_002",
   "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "def@gmail.com",
-  "Name": "DEF",
-  "Phone": "+4368864133000",
-  "Role": "DataSubject",
-  "Territory": "Innsbruck",
-  "Vat": "dummy 55555"
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "Rasheed@gmail.com",
+  "Name": "Rasheed",
+  "Phone": "+4368864132212",
+  "Role": "DataOwner",
+  "Territory": "Vienna",
+  "Vat": "9999"
 }
 ===========================================
 {
-  "Address": "Peerhofer strasse 6020 Innsbruck",
-  "CompanyId": "company id",
+  "Address": "Stadlauer strasse 6 1220 Vienna",
+  "CompanyId": "comp_002",
   "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "CompanyABC@gmail.com",
-  "Name": "Company ABC",
-  "Phone": "+4368864133012",
-  "Role": "DataController",
-  "Territory": "Innsbruck",
-  "Vat": "dummy 66666"
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "John@gmail.com",
+  "Name": "John",
+  "Phone": "+4368864133222",
+  "Role": "DataOwner",
+  "Territory": "Vienna",
+  "Vat": "88888"
 }
 ===========================================
 {
   "Address": "Industriesstrasse new Siedlung 146 1220 Vienna",
-  "CompanyId": "company id",
+  "CompanyId": "comp_001",
   "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
+  "CreateDate": "2023-04-08T10:24:26.773Z",
   "Email": "CompanyDEF@gmail.com",
   "Name": "Company DEF",
   "Phone": "+4368864133100",
   "Role": "DataController",
   "Territory": "Vienna",
-  "Vat": "dummy 7777777"
+  "Vat": "7777777"
 }
 ===========================================
 {
-  "Address": "Stadlauer strasse 6 1220 Vienna",
-  "CompanyId": "company id",
+  "Address": "Viktor Franz Hess strasse 1 6020 Innsbruck",
+  "CompanyId": "comp_002",
   "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "John@gmail.com",
-  "Name": "John",
-  "Phone": "+4368864133222",
-  "Role": "DataSubjecg",
-  "Territory": "Vienna",
-  "Vat": "dummy 88888"
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "def@gmail.com",
+  "Name": "DEF",
+  "Phone": "+4368864133000",
+  "Role": "DataOwner",
+  "Territory": "Innsbruck",
+  "Vat": "55555"
 }
 ===========================================
 {
-  "Address": "Taborstrasse 10 1020 Vienna",
-  "CompanyId": "company id",
+  "Address": "Lohbachhufer 6 6020 Innsbruck",
+  "CompanyId": "comp_002",
   "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "Rasheed@gmail.com",
-  "Name": "Rasheed",
-  "Phone": "+4368864132212",
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "abc@gmail.com",
+  "Name": "ABC",
+  "Phone": "+4368864133064",
+  "Role": "DataOwner",
+  "Territory": "Innsbruck",
+  "Vat": "44444444"
+}
+===========================================
+{
+  "Address": "Technikerstrasse 7/008 6020 Innsbruck",
+  "CompanyId": "comp_002",
+  "Country": "Austria",
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "amar.tauqeer@hotmail.com",
+  "Name": "Tauqeer",
+  "Phone": "+4368864133065",
+  "Role": "DataController",
+  "Territory": "Innsbruck",
+  "Vat": "333333"
+}
+===========================================
+{
+  "Address": "Technikerstrasse 7/008 6020 Innsbruck",
+  "CompanyId": "comp_002",
+  "Country": "Austria",
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "amar.tauqeer@gmail.com",
+  "Name": "Amar",
+  "Phone": "+4368864133065",
+  "Role": "DataOwner",
+  "Territory": "Innsbruck",
+  "Vat": "2222222"
+}
+===========================================
+{
+  "Address": "Technikerstrasse 7/008 6020 Innsbruck",
+  "CompanyId": "comp_002",
+  "Country": "Austria",
+  "CreateDate": "2023-04-08T10:24:26.773Z",
+  "Email": "amar.tauqeer@gmail.com",
+  "Name": "Amar",
+  "Phone": "+4368864133065",
   "Role": "DataSubject",
-  "Territory": "Vienna",
-  "Vat": "dummy 9999"
-}
-===========================================
-{
-  "Address": "Strom strasse 18 1200 Vienna",
-  "CompanyId": "company id",
-  "Country": "Austria",
-  "CreateDate": "2022-07-13T09:22:08.866Z",
-  "Email": "Aslam@gmail.com",
-  "Name": "Aslam",
-  "Phone": "+4368864134000",
-  "Role": "DataSubject",
-  "Territory": "Vienna",
-  "Vat": "dummy 10101010"
+  "Territory": "Innsbruck",
+  "Vat": "2222222"
 }
 ===========================================
 
