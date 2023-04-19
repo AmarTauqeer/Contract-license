@@ -1,3 +1,4 @@
+from core.security.DigitalSignature import DigitalSignature
 from core.security.RsaAesDecryption import RsaAesDecrypt
 from core.signature_validation.contract_signatures_validation import ContractSignatureValidation
 from resources.schemas import *
@@ -26,9 +27,11 @@ class GetSignatures(MethodResource, Resource):
                 contractor_id = sig_data['contractorId']
                 create_date = sig_data['createDate']
                 signature_text = sig_data['signatureText']
+                digital_signature = sig_data['digitalSignature']
 
                 new_data = {'signatureId': signatureId, 'contractor_id': contractor_id,
-                            'createDate': create_date, 'signatureText': signature_text}
+                            'createDate': create_date, 'signatureText': signature_text,
+                            'digitalSignature': digital_signature}
                 signature_arry.append(new_data)
             if len(signature_arry) != 0:
                 return signature_arry
@@ -48,19 +51,32 @@ class SignatureById(MethodResource, Resource):
                                    contractRequester=None, contractProvider=None, termID=None))
         res = response["results"]['bindings']
         if len(res) != 0:
+
             obj_dec = RsaAesDecrypt()
+            obj_sig = DigitalSignature()
+
             data = {'signature_id': signatureID, 'signature': res[0]['signatureText']['value']}
             decrypted_result = obj_dec.rsa_aes_decrypt(data)
             signature = decrypted_result[0]['signature']
 
-            new_data = {'signatureId': signatureID,
-                        'createDate': res[0]['createDate']['value'],
-                        'signatureText': signature,  # d['signatureText']['value'],
-                        'contractorId': res[0]['contractorId']['value'],
-                        }
+            # digital signature verification
+            data_digital_sig = {'signature': res[0]['digitalSignature']['value'],
+                                'message': res[0]['contractorId']['value']}
+            result = obj_sig.digital_signature_verify(data_digital_sig)
+            # print(type(result))
+            # end digital signature verification
+            if ("Trusted message" in result):
+                new_data = {'signatureId': signatureID,
+                            'createDate': res[0]['createDate']['value'],
+                            'signatureText': signature,  # d['signatureText']['value'],
+                            'digitalSignature': res[0]['digitalSignature']['value'],
+                            'contractorId': res[0]['contractorId']['value'],
+                            }
 
-            if len(new_data) != 0:
-                return new_data
+                if len(new_data) != 0:
+                    return new_data
+            else:
+                return 'Digital signature is invalid.'
         return 'No recrod found for this ID'
 
 
@@ -75,7 +91,7 @@ class SignatureDeleteById(MethodResource, Resource):
         result = SignatureById.get(self, signatureID)
         my_json = result.data.decode('utf8')
         decoded_data = json.loads(my_json)
-        print(decoded_data)
+        # print(decoded_data)
 
         if decoded_data != 'No record available for this term id':
             if decoded_data['signatureId'] == signatureID:
@@ -122,12 +138,14 @@ class ContractSignatureUpdate(MethodResource, Resource):
         schema_serializer = ContractorSignaturesUpdateSchema()
         data = request.get_json(force=True)
         signature_id = data['SignatureId']
+        # print(signature_id)
         # get contract status from db
         result = SignatureById.get(self, signature_id)
         my_json = result.data.decode('utf8')
         decoded_data = json.loads(my_json)
+        # print(decoded_data)
         if decoded_data != 'No record available for this signature id':
-            if decoded_data[0]['signatureId'] == signature_id:
+            if decoded_data['signatureId'] == signature_id:
                 validated_data = schema_serializer.load(data)
                 av = ContractSignatureValidation()
                 response = av.post_data(validated_data, type="update", signature_id=None)
@@ -166,6 +184,7 @@ class GetContractSignatures(MethodResource, Resource):
                 new_data = {'signatureId': signature_id,
                             'signatureText': signature,  # d['signatureText']['value'],
                             'createDate': d['createDate']['value'],
+                            'digitalSignature': d['digitalSignature']['value'],
                             'contractorId': d['contractorId']['value'],
                             }
                 signature_array.append(new_data)

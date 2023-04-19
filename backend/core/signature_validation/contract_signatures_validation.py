@@ -1,7 +1,9 @@
+import json
 import os
 
 from core.query_processor.QueryProcessor import QueryEngine
 from core.security.RsaAesEncryption import RsaAesEncrypt
+from core.security.DigitalSignature import DigitalSignature
 
 
 class ContractSignatureValidation(QueryEngine):
@@ -24,11 +26,18 @@ class ContractSignatureValidation(QueryEngine):
         CreateDate = validated_data["CreateDate"]
         Signature = validated_data["Signature"]
 
-
         if type == "insert":
             SignatureId = signature_id
+
+            ############## digital signature ########################
+            signature_data = {'message': ContractorId}
+            obj_sig = DigitalSignature()
+            data_from_signature = obj_sig.digital_signature(signature_data)
+            digital_signature=data_from_signature["signature"]
+            ############## end digital signature ########################
+
             ############## encryption ########################
-            data = {'signature_id': SignatureId, 'signature': Signature }
+            data = {'signature_id': SignatureId, 'signature': Signature}
             obj = RsaAesEncrypt()
             encrypted_data = obj.rsa_aes_encrypt(data)
 
@@ -36,16 +45,24 @@ class ContractSignatureValidation(QueryEngine):
             ############## end encryption ########################
             respone = self.post_sparql(self.get_username(), self.get_password(),
                                        self.insert_query_contract_signature(SignatureId=SignatureId,
-                                                                    ContractorId=ContractorId,
-                                                                    CreateDate=CreateDate,
-                                                                    Signature=Signature,
-                                                                    )
+                                                                            ContractorId=ContractorId,
+                                                                            CreateDate=CreateDate,
+                                                                            Signature=Signature,
+                                                                            DigitalSignature=digital_signature,
+                                                                            )
 
                                        )
         else:
             SignatureId = validated_data["SignatureId"]
+            ############## digital signature ########################
+            sngnature_data = {'message': ContractorId}
+            obj_sig = DigitalSignature()
+            data_from_signature = obj_sig.digital_signature(sngnature_data)
+            digital_signature = data_from_signature["signature"]
+            ############## end signature ########################
+
             ############## encryption ########################
-            data = {'signature_id': SignatureId, 'signature': Signature }
+            data = {'signature_id': SignatureId, 'signature': Signature}
             obj = RsaAesEncrypt()
             encrypted_data = obj.rsa_aes_encrypt(data)
 
@@ -60,10 +77,11 @@ class ContractSignatureValidation(QueryEngine):
                 # insert into kg
                 respone = self.post_sparql(self.get_username(), self.get_password(),
                                            self.insert_query_contract_signature(SignatureId=SignatureId,
-                                                                    ContractorId=ContractorId,
-                                                                    CreateDate=CreateDate,
-                                                                    Signature=Signature,
-                                                                   )
+                                                                                ContractorId=ContractorId,
+                                                                                CreateDate=CreateDate,
+                                                                                Signature=Signature,
+                                                                                DigitalSignature=digital_signature,
+                                                                                )
 
                                            )
         return respone

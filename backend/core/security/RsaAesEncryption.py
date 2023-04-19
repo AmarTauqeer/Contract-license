@@ -2,6 +2,7 @@ import base64
 import os
 import re
 
+
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto import Random
@@ -66,9 +67,13 @@ class RsaAesEncrypt():
         pattern_regex = r"[ -\/:-@\[-\`{-~]"
         return re.sub(r'([\'\"\\\.\\\\*\?\[\^\]\$\(\)\{\}\!\<\>\|\:\-])', r'\\\1', str(data.decode("utf-8")))
 
+
 # test locally
 # if __name__ == '__main__':
-#     message = b'amendment description'
+#     # message = b'amendment description'
 #     obj =RsaAesEncrypt()
-#     a=obj.rsa_aes_encrypt(message)
+#     # a=obj.rsa_aes_encrypt(message)
 #     # print(a)
+#     data = {"message": "contractor id", "signature": "amar tauqeer"}
+#     signature =obj.digital_signature(data)
+#     obj.digital_signature_verify(signature)

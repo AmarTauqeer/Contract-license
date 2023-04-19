@@ -272,6 +272,7 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
                 ?Signature rdf:type :Signature;
                 :signatureID ?signatureId;
                  :hasSignature ?signatureText;
+                 :hasDigitalSignature ?digitalSignature;
                 :hasCreationDate ?createDate .
                 filter(?signatureId="{1}") .
             }}""").format(self.prefix(), id)
@@ -352,11 +353,12 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
 
     def get_all_signatures(self):
         query = textwrap.dedent("""{0}
-            select ?signatureId ?signatureText ?createDate ?contractorId
+            select ?signatureId ?signatureText ?createDate ?contractorId ?digitalSignature
             where{{   
                 ?Signature rdf:type :Signature;
                 :signatureID ?signatureId;
                  :hasSignature ?signatureText;
+                 :hasDigitalSignature ?digitalSignature;
                 :hasCreationDate ?createDate;
                 :contractorID ?contractorId .
         }}
@@ -569,6 +571,7 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
             ?Signature rdf:type :Signature;
                        :hasCreationDate ?createDate;
                        :hasSignature ?signatureText;
+                       :hasDigitalSignature ?digitalSignature;
                        :signatureID ?signatureId;
                        :contractorID ?contractorId .
             filter(?signatureId="{1}") .
@@ -731,7 +734,7 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
         print(insquery)
         return insquery
 
-    def insert_query_contract_signature(self, SignatureId, ContractorId, CreateDate, Signature):
+    def insert_query_contract_signature(self, SignatureId, ContractorId, CreateDate, Signature, DigitalSignature):
         # create_date = datetime.now()
         insquery = textwrap.dedent("""{0} 
         INSERT DATA {{
@@ -739,9 +742,10 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
                         :contractorID "{2}";
                         :hasCreationDate {3};
                         :hasSignature "{4}";
+                        :hasDigitalSignature "{5}";
                         :signatureID "{1}"
                    }}       
           """.format(self.prefix(), SignatureId, ContractorId, '\'{}\'^^xsd:dateTime'.format(CreateDate),
-                     Signature))
+                     Signature, DigitalSignature))
         # print(insquery)
         return insquery

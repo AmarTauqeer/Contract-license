@@ -240,6 +240,7 @@ class ContractorSignaturesRequestSchema(Schema):
     ContractorId = fields.String(required=True, description="Contractor ID")
     CreateDate = fields.DateTime(required=False, description="Create Date")
     Signature = fields.String(required=True, description="Signature")
+    DigitalSignature = fields.String(required=True, description="Digital Signature")
 
 
 class ContractorSignaturesUpdateSchema(Schema):
@@ -247,6 +248,7 @@ class ContractorSignaturesUpdateSchema(Schema):
     ContractorId = fields.String(required=True, description="Contractor ID")
     CreateDate = fields.DateTime(required=False, description="Create Date")
     Signature = fields.String(required=True, description="Signature")
+    DigitalSignature = fields.String(required=True, description="Digital Signature")
 
 
 class BulkResponseQuerySchema(Schema):
