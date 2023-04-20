@@ -452,7 +452,7 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
 
     def get_contract_signatures(self, id):
         query = textwrap.dedent("""{0}
-            SELECT ?signatureId ?signatureText ?createDate ?contractorId
+            SELECT ?signatureId ?signatureText ?createDate ?contractorId ?digitalSignature
                 WHERE {{
                  ?Contract rdf:type fibo-fnd-agr-ctr:Contract;
                     :contractID ?contractId;
@@ -461,6 +461,7 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
                     ?signature :hasCreationDate ?createDate .
                     ?signature :signatureID ?signatureId .
                     ?signature :contractorID ?contractorId .
+                    ?signature :hasDigitalSignature ?digitalSignature .
                 filter(?contractId="{1}") .
             }}""").format(self.prefix(), id)
         return query

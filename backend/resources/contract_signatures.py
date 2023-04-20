@@ -170,11 +170,13 @@ class GetContractSignatures(MethodResource, Resource):
                                    contractRequester=None, contractProvider=None, contractorID=None, termID=None
                                    ))
         data = response["results"]["bindings"]
+        # print(data)
         if len(data) != 0:
             identifier_array = []
             signature_array = []
             for d in data:
                 signature_id = d['signatureId']['value']
+                # print(d)
                 obj_dec = RsaAesDecrypt()
                 data = {'signature_id': signature_id, 'signature': d['signatureText']['value'],
                         }

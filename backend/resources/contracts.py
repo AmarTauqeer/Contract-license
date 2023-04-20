@@ -1,8 +1,9 @@
 import requests
 
+from core.security.DigitalSignature import DigitalSignature
 from core.security.RsaAesDecryption import RsaAesDecrypt
 from resources.contract_obligation import GetObligationByTermId, ObligationDeleteById
-from resources.contract_signatures import GetContractSignatures, SignatureDeleteById
+from resources.contract_signatures import GetContractSignatures, SignatureDeleteById, SignatureById
 from resources.contract_terms import GetContractTerms, TermDeleteById
 from resources.imports import *
 from resources.schemas import *
@@ -385,6 +386,33 @@ class ContractCreate(MethodResource, Resource):
     def post(self, **kwargs):
         schema_serializer = ContractRequestSchema()
         data = request.get_json(force=True)
+        # digital signature verification
+        signature_identifier = data["Signatures"]
+        for sig in signature_identifier:
+            signature_data = SignatureById.get(self, sig)
+            if signature_data.json != "No recrod found for this ID":
+                data_json = signature_data.json
+                print(data_json)
+                digital_signature = data_json["digitalSignature"]
+                contractor_id = data_json["contractorId"]
+                obj_sig = DigitalSignature()
+                # print(f"digital signature={digital_signature}  contractor id ={contractor_id}")
+
+                # digital signature verification
+                data_digital_sig = {'signature': digital_signature,
+                                    'message': contractor_id}
+                result = obj_sig.digital_signature_verify(data_digital_sig)
+                # print(type(result))
+                # end digital signature verification
+                if ("Trusted message" in result):
+                    print("ok")
+                else:
+                    # print("digital signature is invalid")
+                    return "digital signature is invalid"
+            else:
+                # print("digital signature is invalid")
+                return f"No record found for this signature id {sig}"
+
         contract_category = data["ContractCategory"]
         uuidOne = uuid.uuid1()
         if contract_category == 'categoryBusinessToBusiness':
