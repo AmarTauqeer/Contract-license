@@ -43,24 +43,24 @@ class CompanyUpdate(MethodResource, Resource):
             #
             # if validation_result != "":
             #     return jsonify({'validation_error':validation_result})
-
+            from resources.ccv_helper import CCVHelper
+            create_date = CCVHelper.iso_date_conversion(self, decoded_data['createDate'][:19])
             validation_result = ValidationShaclInsertUpdate.validation_shacl_insert_update(self, case="company",
                                                                                            compid=company_id,
-                                                                                           name=decoded_data['Name'],
-                                                                                           email=decoded_data['Email'],
-                                                                                           phone=decoded_data['Phone'],
-                                                                                           createdate=decoded_data[
-                                                                                               'CreateDate'],
-                                                                                           country=decoded_data['Country'],
-                                                                                           territory=decoded_data['Territory'],
-                                                                                           address=decoded_data['Address'],
-                                                                                           vat=decoded_data['Vat'],
+                                                                                           name=decoded_data['name'],
+                                                                                           email=decoded_data['email'],
+                                                                                           phone=decoded_data['phone'],
+                                                                                           createdate=create_date,
+                                                                                           country=decoded_data['country'],
+                                                                                           territory=decoded_data['territory'],
+                                                                                           address=decoded_data['address'],
+                                                                                           vat=decoded_data['vat'],
                                                                                            )
 
-            # print(validation_result['contractor_violoations'])
+            # print(validation_result['company_violoations'])
 
             if 'sh:Violation' in validation_result['company_violoations']:
-                return validation_result['company_violoations']
+                return jsonify({'violation':validation_result['company_violoations']})
             validated_data = schema_serializer.load(data)
 
             av = CompanyValidation()

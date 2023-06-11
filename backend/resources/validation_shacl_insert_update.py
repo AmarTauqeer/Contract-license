@@ -102,7 +102,7 @@ class ValidationShaclInsertUpdate(MethodResource, Resource):
                             dct:description "{3}" .
                             """.format(prefix(), termid, createdate, desc)
 
-            # print(f"data graph={data_graph}")
+            print(f"data graph={data_graph}")
 
             d = Graph().parse(data=data_graph, format="turtle")
             s = Graph().parse(data=shacl_file, format="turtle")

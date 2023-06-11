@@ -31,14 +31,14 @@
         @prefix ex: <http://example.com/ns#> .
 
 
-                            base:contb2c_f6a0cd74-2f53-11ed-be7d-3f8589292a29 a base:CCVFourth;
+                            base:contb2c_0a9a1096-06f0-11ee-b285-f92996b00ef8 a base:CCVFourth;
                             base:contractType base:Written;
-                            base:forPurpose "data sharing between Amar Tauqeer and LexisNexis";
+                            base:forPurpose "Data shring contract between Amar Tauqeer and Muhammad Awais";
                             base:hasContractCategory base:categoryBusinessToConsumer;
-                            base:hasContractStatus base:statusCreated;
-                            base:hasEndDate "2021-07-07T10:38:07"^^xsd:dateTime;
-                            fibo-fnd-agr-ctr:hasEffectiveDate "2022-09-07T10:38:07"^^xsd:dateTime;
-                            fibo-fnd-agr-ctr:hasExecutionDate "2022-09-07T10:38:07"^^xsd:dateTime ;
+                            base:hasContractStatus base:statusUpdated;
+                            base:hasEndDate "2024-06-09T18:03:24"^^xsd:dateTime;
+                            fibo-fnd-agr-ctr:hasEffectiveDate "2023-06-09T18:03:24"^^xsd:dateTime;
+                            fibo-fnd-agr-ctr:hasExecutionDate "2023-06-09T18:03:24"^^xsd:dateTime ;
                             base:hasStates base:statePending;
-                            base:currentDateTime "2023-03-28T09:21:52"^^xsd:dateTime .
+                            base:currentDateTime "2023-06-11T14:46:31"^^xsd:dateTime .
                             

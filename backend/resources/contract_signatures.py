@@ -176,7 +176,6 @@ class GetContractSignatures(MethodResource, Resource):
             signature_array = []
             for d in data:
                 signature_id = d['signatureId']['value']
-                # print(d)
                 obj_dec = RsaAesDecrypt()
                 data = {'signature_id': signature_id, 'signature': d['signatureText']['value'],
                         }

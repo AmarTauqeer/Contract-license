@@ -17,6 +17,7 @@ class GetTerms(MethodResource, Resource):
             query.select_query_gdb(purpose=None, dataRequester=None, additionalData="terms", termID=None,
                                    contractRequester=None, contractProvider=None, ))
         response = response["results"]['bindings']
+        print(response)
         if len(response) != 0:
             term_array = []
             for r in response:
@@ -183,6 +184,7 @@ class TermUpdate(MethodResource, Resource):
         result = TermById.get(self, term_id)
         my_json = result.data.decode('utf8')
         decoded_data = json.loads(my_json)
+        # print(decoded_data)
         if decoded_data != 'No record available for this term id':
             if decoded_data['termId'] == term_id:
                 # # shacl validation
@@ -203,14 +205,13 @@ class TermUpdate(MethodResource, Resource):
                 #
                 # if validation_result != "":
                 #     return jsonify({'validation_error':validation_result})
-
+                from resources.ccv_helper import CCVHelper
+                create_date = CCVHelper.iso_date_conversion(self, decoded_data['createDate'][:19])
                 validation_result = ValidationShaclInsertUpdate.validation_shacl_insert_update(self, case="term",
-                                                                                               typeid=decoded_data[
-                                                                                                   'TermTypeId'],
-                                                                                               createdate=decoded_data[
-                                                                                                   'CreateDate'],
+                                                                                                termid=term_id,
+                                                                                               createdate=create_date,
                                                                                                desc=decoded_data[
-                                                                                                   'Description'])
+                                                                                                   'description'])
 
                 # print(validation_result['term_violoations'])
 

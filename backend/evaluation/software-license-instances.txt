@@ -1,0 +1,81 @@
+============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to CCV Tool",
+  "LicenseId": "MIT",
+  "Name": "MIT license for CCV Tool",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to Contract module",
+  "LicenseId": "MIT",
+  "Name": "MIT license for Contract Module",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to Consent Module",
+  "LicenseId": "MIT",
+  "Name": "MIT license for Consent Module",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to GDPR-compliant Tool (cosent)",
+  "LicenseId": "MIT",
+  "Name": "MIT license for GDPR-compliant Tool (cosent)",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to Graph validator",
+  "LicenseId": "MIT",
+  "Name": "MIT license for Graph validator",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to Smell and taste disorder KG",
+  "LicenseId": "MIT",
+  "Name": "MIT license for Smell and taste disorder KG",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to Smell and taste disorder UI",
+  "LicenseId": "MIT",
+  "Name": "MIT license for Smell and taste disorder UI",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to Graph validator KG",
+  "LicenseId": "MIT",
+  "Name": "MIT license for Graph validator KG",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to Contract API",
+  "LicenseId": "MIT",
+  "Name": "MIT license for Contract API",
+  "VersionInfo": "V_01"
+}
+===============================
+{
+  "CreateDate": "2023-06-10T08:10:15.233Z",
+  "Description": "Software licence to Consent API",
+  "LicenseId": "MIT",
+  "Name": "MIT license for Consent API",
+  "VersionInfo": "V_01"
+}
+===============================

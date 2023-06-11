@@ -631,7 +631,7 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
 
     def insert_query_contractor(self, ContractorId, Name, Email, Phone, Address, Territory, Country, Role, Vat,
                                 CompanyId, CreateDate):
-        create_date = datetime.now()
+        # create_date = datetime.now()
         insquery = textwrap.dedent("""{0} 
         INSERT DATA {{
             :{1} rdf:type prov:Agent;
@@ -648,7 +648,7 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
                         :contractorID "{1}" .
                    }}       
           """.format(self.prefix(), ContractorId, Name, Email, Phone, Address, Territory, Country, Role, Vat,
-                     CompanyId, '\'{}\'^^xsd:dateTime'.format(create_date)))
+                     CompanyId, '\'{}\'^^xsd:dateTime'.format(CreateDate)))
         # print(insquery)
         return insquery
 
@@ -732,7 +732,7 @@ class QueryEngine(Credentials, SPARQL, HelperContract):
           """.format(self.prefix(), ObligationId, Description, ContractorId, ContractIdB2C, State,
                      '\'{}\'^^xsd:dateTime'.format(ExecutionDate), '\'{}\'^^xsd:dateTime'.format(EndDate),
                      '\'{}\'^^xsd:dateTime'.format(FulfillmentDate)))
-        print(insquery)
+        # print(insquery)
         return insquery
 
     def insert_query_contract_signature(self, SignatureId, ContractorId, CreateDate, Signature, DigitalSignature):

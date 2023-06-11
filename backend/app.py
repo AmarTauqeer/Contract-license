@@ -160,7 +160,7 @@ docs.register(GetCompany)
 api.add_resource(GetTermTypes, '/contract/term/types')
 docs.register(GetTermTypes)
 
-api.add_resource(GetTerms, '/terms/')
+api.add_resource(GetTerms, '/contract/terms/')
 docs.register(GetTerms)
 
 api.add_resource(GetContractSignatures, '/contract/signatures/<string:contractID>')

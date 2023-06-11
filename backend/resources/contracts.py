@@ -81,7 +81,7 @@ class Contracts(MethodResource, Resource):
                     'effectiveDate': d['effectiveDate']['value'],
                     'executionDate': d['executionDate']['value'],
                     'endDate': d['endDate']['value'],
-                    'medium': d['medium']['value'][59:],
+                    'medium': d['medium']['value'],#[59:],
                     'consideration': d['consideration']['value'],
                     'value': d['value']['value'],
                     'identifiers': obj
@@ -311,30 +311,32 @@ class ContractUpdate(MethodResource, Resource):
                 status_value = decoded_data['contractStatus']
                 signed = re.findall(r"Signed", status_value)
                 if len(signed) == 0:
+                    from resources.ccv_helper import CCVHelper
+                    end_date = CCVHelper.iso_date_conversion(self, decoded_data['endDate'][:19])
+                    execution_date = CCVHelper.iso_date_conversion(self, decoded_data['executionDate'][:19])
+                    effective_date = CCVHelper.iso_date_conversion(self, decoded_data['effectiveDate'][:19])
+
                     validation_result = ValidationShaclInsertUpdate.validation_shacl_insert_update(self,
                                                                                                    case="contract",
                                                                                                    contid=contract_id,
                                                                                                    conttype=
                                                                                                    decoded_data[
-                                                                                                       'ContractType'],
+                                                                                                       'contractType'],
                                                                                                    contcategory=
                                                                                                    decoded_data[
-                                                                                                       'ContractCategory'],
+                                                                                                       'contractCategory'],
                                                                                                    contstatus=
                                                                                                    decoded_data[
-                                                                                                       'ContractStatus'],
+                                                                                                       'contractStatus'],
                                                                                                    consValue=
                                                                                                    decoded_data[
-                                                                                                       'ConsiderationValue'],
+                                                                                                       'value'],
                                                                                                    effecdate=
-                                                                                                   decoded_data[
-                                                                                                       'EffectiveDate'],
-                                                                                                   exedate=decoded_data[
-                                                                                                       'ExecutionDate'],
-                                                                                                   enddate=decoded_data[
-                                                                                                       'EndDate'],
+                                                                                                   effective_date,
+                                                                                                   exedate=execution_date,
+                                                                                                   enddate=end_date,
                                                                                                    purpose=decoded_data[
-                                                                                                       'Purpose'],
+                                                                                                       'purpose'],
                                                                                                    )
 
                     # print(validation_result['obligation_violoations'])

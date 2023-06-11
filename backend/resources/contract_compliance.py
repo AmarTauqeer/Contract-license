@@ -127,9 +127,9 @@ class GetContractCompliance(MethodResource, Resource):
                         and b2b_contract_status not in (
                         'statusViolated', 'statusTerminated', 'statusExpired'):
                     print('b2b violation')
-                    # ContractStatusUpdateById.get(self, b2b_contract_id, 'statusViolated')
-                    # ObligationStatusUpdateById.get(self, id, 'stateViolated')
-                    # CCVHelper.send_email(self, 'violation', b2b, obl_desc, obligation_id)
+                    ContractStatusUpdateById.get(self, b2b_contract_id, 'statusViolated')
+                    ObligationStatusUpdateById.get(self, id, 'stateViolated')
+                    CCVHelper.send_email(self, 'violation', b2b, obl_desc, obligation_id)
                 end=timer()
                 elapsed_time={
                     'scenario':'ccv_first_scenario',
@@ -172,10 +172,10 @@ class GetContractCompliance(MethodResource, Resource):
                         not in ('statusViolated', 'statusTerminated', 'statusExpired'):
                     print('if')
                     # update b2b contract status
-                    # ContractStatusUpdateById.get(self, b2b_contract_id, 'statusExpired')
+                    ContractStatusUpdateById.get(self, b2b_contract_id, 'statusExpired')
                     # update b2b obligation
-                    # ObligationStatusUpdateById.get(self, obligation_id, 'stateInvalid')
-                    # CCVHelper.send_email(self, 'expire', b2b_contract_id, obl_desc, obligation_id)
+                    ObligationStatusUpdateById.get(self, obligation_id, 'stateInvalid')
+                    CCVHelper.send_email(self, 'expire', b2b_contract_id, obl_desc, obligation_id)
 
                 else:
                     # current_date_time = date(2023, 4, 24)
@@ -183,9 +183,9 @@ class GetContractCompliance(MethodResource, Resource):
                             and b2b_contract_status not in (
                             'statusViolated', 'statusTerminated', 'statusExpired'):
                         print('violation')
-                        # ContractStatusUpdateById.get(self, b2b_contract_id, 'statusViolated')
-                        # ObligationStatusUpdateById.get(self, obligation_id, 'stateViolated')
-                        # CCVHelper.send_email(self, 'violation', b2b_contract_id, obl_desc, obligation_id)
+                        ContractStatusUpdateById.get(self, b2b_contract_id, 'statusViolated')
+                        ObligationStatusUpdateById.get(self, obligation_id, 'stateViolated')
+                        CCVHelper.send_email(self, 'violation', b2b_contract_id, obl_desc, obligation_id)
                 end = timer()
                 elapsed_time = {
                     'scenario': 'ccv_second_scenario',
@@ -222,10 +222,10 @@ class GetContractCompliance(MethodResource, Resource):
                         not in ('statusViolated', 'statusTerminated', 'statusExpired'):
                     print('if')
                     # update contract status
-                    # ContractStatusUpdateById.get(self, b2c_contract_id, 'statusExpired')
+                    ContractStatusUpdateById.get(self, b2c_contract_id, 'statusExpired')
                     # update b2b obligation
-                    # ObligationStatusUpdateById.get(self, obligation_id, 'stateInvalid')
-                    # CCVHelper.send_email(self, 'expire', b2c, obl_desc, obligation_id)
+                    ObligationStatusUpdateById.get(self, obligation_id, 'stateInvalid')
+                    CCVHelper.send_email(self, 'expire', b2c, obl_desc, obligation_id)
                     end = timer()
                     elapsed_time = {
                         'scenario': 'ccv_third_if_part_scenario',
@@ -259,9 +259,9 @@ class GetContractCompliance(MethodResource, Resource):
                             and b2c_contract_status not in (
                             'statusViolated', 'statusTerminated', 'statusExpired'):
                         print('else')
-                        # ContractStatusUpdateById.get(self, b2c_contract_id, 'statusViolated')
-                        # ObligationStatusUpdateById.get(self, id, 'stateViolated')
-                        # CCVHelper.send_email(self, 'violation', b2c, obl_desc, obligation_id)
+                        ContractStatusUpdateById.get(self, b2c_contract_id, 'statusViolated')
+                        ObligationStatusUpdateById.get(self, id, 'stateViolated')
+                        CCVHelper.send_email(self, 'violation', b2c, obl_desc, obligation_id)
                         end = timer()
                         elapsed_time = {
                             'scenario': 'ccv_third_else_part_scenario',
@@ -297,9 +297,9 @@ class GetContractCompliance(MethodResource, Resource):
                         and b2c_contract_status not in (
                         'statusViolated', 'statusTerminated', 'statusExpired'):
                     print('if')
-                    # ContractStatusUpdateById.get(self, b2c_contract_id, 'statusViolated')
-                    # ObligationStatusUpdateById.get(self, id, 'stateViolated')
-                    # CCVHelper.send_email(self, 'violation', b2c, obl_desc, obligation_id)
+                    ContractStatusUpdateById.get(self, b2c_contract_id, 'statusViolated')
+                    ObligationStatusUpdateById.get(self, id, 'stateViolated')
+                    CCVHelper.send_email(self, 'violation', b2c, obl_desc, obligation_id)
                     end = timer()
                     elapsed_time = {
                         'scenario': 'ccv_fourth_scenario',
@@ -385,12 +385,12 @@ class GetContractCompliance(MethodResource, Resource):
                                                         consent_id) + ' ' + 'has been expired/invalid but the contract =' \
                                                               + contract + ' is still running based on this consent '
 
-                                                    # mail = Mailer(email=os.environ.get('MAIL_USERNAME'),
-                                                    #               password=os.environ.get('MAIL_PASSWORD'))
-                                                    # mail.settings(provider=mail.MICROSOFT)
-                                                    # mail.send(receiver=email,
-                                                    #           subject='Violation/Expiration of Obligation',
-                                                    #           message=message)
+                                                    mail = Mailer(email=os.environ.get('MAIL_USERNAME'),
+                                                                  password=os.environ.get('MAIL_PASSWORD'))
+                                                    mail.settings(provider=mail.MICROSOFT)
+                                                    mail.send(receiver=email,
+                                                              subject='Violation/Expiration of Obligation',
+                                                              message=message)
         print(f"elapsed time all scenario={total_elapsed_time}")
         total_elapsed_time_1st_scenario=0.0
         total_elapsed_time_ccv_second_scenario = 0.0
