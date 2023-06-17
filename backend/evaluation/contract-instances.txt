@@ -23,7 +23,7 @@
 }
 ===============================
 {
-  "ConsentId": "const_001",
+  "ConsentId": "",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -35,6 +35,7 @@
   "EffectiveDate": "2023-04-08T09:25:55.933Z",
   "EndDate": "2024-04-08T09:25:55.933Z",
   "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "LicenseId": "MIT",
   "Medium": "online",
   "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [
@@ -92,7 +93,7 @@
 }
 ===============================
 {
-  "ConsentId": "const_001",
+  "ConsentId": "",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -104,6 +105,7 @@
   "EffectiveDate": "2023-04-08T09:25:55.933Z",
   "EndDate": "2024-04-08T09:25:55.933Z",
   "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "LicenseId": "MIT",
   "Medium": "online",
   "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [
@@ -161,7 +163,7 @@
 }
 ===============================
 {
-  "ConsentId": "const_001",
+  "ConsentId": "",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -173,6 +175,7 @@
   "EffectiveDate": "2023-04-08T09:25:55.933Z",
   "EndDate": "2024-04-08T09:25:55.933Z",
   "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "LicenseId": "MIT",
   "Medium": "online",
   "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [
@@ -184,7 +187,7 @@
 }
 ===============================
 {
-  "ConsentId": "const_001",
+  "ConsentId": "",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -196,6 +199,7 @@
   "EffectiveDate": "2023-04-08T09:25:55.933Z",
   "EndDate": "2024-04-08T09:25:55.933Z",
   "ExecutionDate": "2023-04-08T09:25:55.933Z",
+  "LicenseId": "MIT",
   "Medium": "online",
   "Purpose": "data sharing between scott and Company ABC",
   "Signatures": [

@@ -67,6 +67,7 @@ class Login(MethodResource, Resource):
     def post(self, **kwargs):
         data = request.get_json(force=True)
         my_json = request.data.decode('utf8')
+        # print(my_json)
         decoded_data = json.loads(my_json)
 
         user = User.query.filter_by(name=decoded_data["Name"]).first()
@@ -92,7 +93,14 @@ class Login(MethodResource, Resource):
 
         headers["Username"] = os.environ['uname']
         headers["Password"] = os.environ['upass']
-        url_get_login = "http://172.16.47.223:5000/contract/token/"
+
+        # for server
+        # url_get_login = "https://actool.contract-license.sti2.at/contract/token/"
+        # url_get_login = "http://172.16.47.223:5005/contract/token/"
+        # for local
+        url_get_login = "http://127.0.0.1:5005/contract/token/"
+        # print(headers)
+
         resp1 = requests.get(url_get_login, headers=headers)
         token=resp1.json()['token']
         os.environ['token'] = token
