@@ -23,7 +23,7 @@ from datetime import datetime, date
 from timeit import default_timer as timer
 
 
-class GetContractCompliance(MethodResource, Resource):
+class ContractCompliance(MethodResource, Resource):
     @doc(description='Contract Compliance', tags=['Contract Compliance'])
     # @check_for_session
     # @Credentials.check_for_token
@@ -37,13 +37,13 @@ class GetContractCompliance(MethodResource, Resource):
         print('scheduler')
 
         obligatons = response["results"]['bindings']
-        current_datetime=str(datetime.now())
+        current_datetime = str(datetime.now())
         current_date_time = CCVHelper.iso_date_conversion(self, current_datetime[:19])
         print(f"current date = {current_date_time}")
         # array for violation message
         all_violation_messages = []
         # array for total elapsed time
-        total_elapsed_time=[]
+        total_elapsed_time = []
 
         # loop over all obligations
         for x in obligatons:
@@ -56,12 +56,16 @@ class GetContractCompliance(MethodResource, Resource):
             get_term = TermByObligationId.get(self, obligation_id)
             my_json = get_term.data.decode('utf-8')
             data = json.loads(my_json)
-            term_id = data['termId']
+            print(data)
+            if data!="No record available for this term id":
+                term_id = data['termId']
 
             # get contract by term
             contract = ContractByTermId.get(self, term_id)
             contract_data = contract.json
-            contract_id = contract_data["contractId"]
+            print(contract_data)
+            if contract_data != 'No data found for this ID':
+                contract_id = contract_data["contractId"]
 
             # initialize b2c data, b2b data, status and id
             b2c = b2c_contract_status = b2c_contract_id = ""
@@ -78,7 +82,7 @@ class GetContractCompliance(MethodResource, Resource):
                 b2b = contract_id
 
             # convert obligation end date time to date
-            date_time_obj=CCVHelper.iso_date_conversion(self, obligation_edate)
+            date_time_obj = CCVHelper.iso_date_conversion(self, obligation_edate)
 
             # get b2c contract
             b2c_data = ContractByContractId.get(self, b2c)
@@ -108,12 +112,12 @@ class GetContractCompliance(MethodResource, Resource):
 
                 # make shacl validation
                 scenario = "ccv_first_scenario"
-                iso_date_b2b_edate = CCVHelper.iso_date_conversion(self,b2b_data['endDate'][:19])
-                iso_date_b2b_exdate = CCVHelper.iso_date_conversion(self,b2b_data['executionDate'][:19])
-                iso_date_b2b_effdate = CCVHelper.iso_date_conversion(self,b2b_data['effectiveDate'][:19])
+                iso_date_b2b_edate = CCVHelper.iso_date_conversion(self, b2b_data['endDate'][:19])
+                iso_date_b2b_exdate = CCVHelper.iso_date_conversion(self, b2b_data['executionDate'][:19])
+                iso_date_b2b_effdate = CCVHelper.iso_date_conversion(self, b2b_data['effectiveDate'][:19])
                 # print(iso_date_b2b_edate)
 
-                start=timer()
+                start = timer()
                 all_violation_messages.append(
                     CCVHelper.shacl_validation(self, scenario=scenario, contid=b2b_contract_id,
                                                conttype=b2b_data['contractType'],
@@ -130,13 +134,13 @@ class GetContractCompliance(MethodResource, Resource):
                     ContractStatusUpdateById.get(self, b2b_contract_id, 'statusViolated')
                     ObligationStatusUpdateById.get(self, id, 'stateViolated')
                     CCVHelper.send_email(self, 'violation', b2b, obl_desc, obligation_id)
-                end=timer()
-                elapsed_time={
-                    'scenario':'ccv_first_scenario',
+                end = timer()
+                elapsed_time = {
+                    'scenario': 'ccv_first_scenario',
                     'obligationId': obligation_id,
-                    'startTime':start,
-                    'endTime':end,
-                    'elapsedTime':round(end-start, 6)
+                    'startTime': start,
+                    'endTime': end,
+                    'elapsedTime': round(end - start, 6)
                 }
                 total_elapsed_time.append(elapsed_time)
 
@@ -154,9 +158,9 @@ class GetContractCompliance(MethodResource, Resource):
                 consent_state = CCVHelper.get_consent_state(self, consent_id)
 
                 scenario = "ccv_second_scenario"
-                iso_date_b2b_edate = CCVHelper.iso_date_conversion(self,b2b_data['endDate'][:19])
-                iso_date_b2b_exdate = CCVHelper.iso_date_conversion(self,b2b_data['executionDate'][:19])
-                iso_date_b2b_effdate = CCVHelper.iso_date_conversion(self,b2b_data['effectiveDate'][:19])
+                iso_date_b2b_edate = CCVHelper.iso_date_conversion(self, b2b_data['endDate'][:19])
+                iso_date_b2b_exdate = CCVHelper.iso_date_conversion(self, b2b_data['executionDate'][:19])
+                iso_date_b2b_effdate = CCVHelper.iso_date_conversion(self, b2b_data['effectiveDate'][:19])
 
                 start = timer()
                 all_violation_messages.append(
@@ -165,7 +169,8 @@ class GetContractCompliance(MethodResource, Resource):
                                                purpose=b2b_data['purpose'], contcategory=b2b_data['contractCategory'],
                                                contstatus=b2b_contract_status, enddate=iso_date_b2b_edate,
                                                effecdate=iso_date_b2b_effdate, exedate=iso_date_b2b_exdate,
-                                               oblstate=obl_state, consstate=consent_state, currentdate=current_date_time))
+                                               oblstate=obl_state, consstate=consent_state,
+                                               currentdate=current_date_time))
 
                 # actual check for expiration
                 if consent_state in ['Invalid', 'Expired'] and b2b_contract_status \
@@ -205,18 +210,19 @@ class GetContractCompliance(MethodResource, Resource):
                 # print(f"consent state={consent_state}")
                 scenario = "ccv_third_if_part_scenario"
 
-                iso_date_b2c_edate = CCVHelper.iso_date_conversion(self,b2c_data['endDate'][:19])
-                iso_date_b2c_exdate = CCVHelper.iso_date_conversion(self,b2c_data['executionDate'][:19])
-                iso_date_b2c_effdate = CCVHelper.iso_date_conversion(self,b2c_data['effectiveDate'][:19])
+                iso_date_b2c_edate = CCVHelper.iso_date_conversion(self, b2c_data['endDate'][:19])
+                iso_date_b2c_exdate = CCVHelper.iso_date_conversion(self, b2c_data['executionDate'][:19])
+                iso_date_b2c_effdate = CCVHelper.iso_date_conversion(self, b2c_data['effectiveDate'][:19])
 
-                start=timer()
+                start = timer()
                 all_violation_messages.append(
                     CCVHelper.shacl_validation(self, scenario=scenario, contid=b2c_contract_id,
                                                conttype=b2c_data['contractType'],
                                                purpose=b2c_data['purpose'], contcategory=b2c_data['contractCategory'],
                                                contstatus=b2c_contract_status, enddate=iso_date_b2c_edate,
                                                effecdate=iso_date_b2c_effdate, exedate=iso_date_b2c_exdate,
-                                               oblstate=obl_state, consstate=consent_state, currentdate=current_date_time))
+                                               oblstate=obl_state, consstate=consent_state,
+                                               currentdate=current_date_time))
 
                 if consent_state in ['Invalid', 'Expired'] and b2c_contract_status \
                         not in ('statusViolated', 'statusTerminated', 'statusExpired'):
@@ -243,7 +249,7 @@ class GetContractCompliance(MethodResource, Resource):
                     iso_date_b2c_exdate = CCVHelper.iso_date_conversion(self, b2c_data['executionDate'][:19])
                     iso_date_b2c_effdate = CCVHelper.iso_date_conversion(self, b2c_data['effectiveDate'][:19])
 
-                    start=timer()
+                    start = timer()
                     all_violation_messages.append(
                         CCVHelper.shacl_validation(self, scenario=scenario, contid=b2c_contract_id,
                                                    conttype=b2c_data['contractType'],
@@ -252,7 +258,8 @@ class GetContractCompliance(MethodResource, Resource):
                                                    contstatus=b2c_contract_status, enddate=iso_date_b2c_edate,
                                                    effecdate=iso_date_b2c_effdate,
                                                    exedate=iso_date_b2c_exdate,
-                                                   oblstate=obl_state, consstate=consent_state, currentdate=current_date_time))
+                                                   oblstate=obl_state, consstate=consent_state,
+                                                   currentdate=current_date_time))
 
                     # current_date_time = date(2023, 4, 24)
                     if current_date_time >= date_time_obj and obl_state == 'statePending' \
@@ -283,14 +290,14 @@ class GetContractCompliance(MethodResource, Resource):
                 iso_date_b2c_exdate = CCVHelper.iso_date_conversion(self, b2c_data['executionDate'][:19])
                 iso_date_b2c_effdate = CCVHelper.iso_date_conversion(self, b2c_data['effectiveDate'][:19])
 
-                start=timer()
+                start = timer()
                 all_violation_messages.append(
                     CCVHelper.shacl_validation(self, scenario=scenario, contid=b2c_contract_id,
                                                conttype=b2c_data['contractType'],
                                                purpose=b2c_data['purpose'], contcategory=b2c_data['contractCategory'],
                                                contstatus=b2c_contract_status, enddate=iso_date_b2c_edate,
                                                effecdate=iso_date_b2c_effdate, exedate=iso_date_b2c_exdate,
-                                               oblstate=obl_state, currentdate=current_date_time,consstate=consent))
+                                               oblstate=obl_state, currentdate=current_date_time, consstate=consent))
 
                 # print(b2c_data)
                 if current_date_time >= date_time_obj and obl_state == 'statePending' \
@@ -356,12 +363,13 @@ class GetContractCompliance(MethodResource, Resource):
                                             consent_state = CCVHelper.get_consent_state(self, consent_id)
 
                                             scenario = "ccv_fifth_scenario"
-                                            start=timer()
+                                            start = timer()
                                             all_violation_messages.append(
                                                 CCVHelper.shacl_validation(self, scenario=scenario,
                                                                            contid=c_obj1['contractId'],
                                                                            contstatus=b2c_contract_status,
-                                                                           consstate=consent_state, currentdate=current_date_time))
+                                                                           consstate=consent_state,
+                                                                           currentdate=current_date_time))
 
                                             end = timer()
                                             elapsed_time = {
@@ -392,27 +400,27 @@ class GetContractCompliance(MethodResource, Resource):
                                                               subject='Violation/Expiration of Obligation',
                                                               message=message)
         print(f"elapsed time all scenario={total_elapsed_time}")
-        total_elapsed_time_1st_scenario=0.0
+        total_elapsed_time_1st_scenario = 0.0
         total_elapsed_time_ccv_second_scenario = 0.0
         total_elapsed_time_ccv_third_if_part_scenario = 0.0
         total_elapsed_time_ccv_third_else_part_scenario = 0.0
         total_elapsed_time_ccv_fourth_scenario = 0.0
         total_elapsed_time_ccv_fifth_scenario = 0.0
         for sc in total_elapsed_time:
-            if sc['scenario']=='ccv_first_scenario':
-                total_elapsed_time_1st_scenario+=sc['elapsedTime']
-            elif sc['scenario']=='ccv_second_scenario':
+            if sc['scenario'] == 'ccv_first_scenario':
+                total_elapsed_time_1st_scenario += sc['elapsedTime']
+            elif sc['scenario'] == 'ccv_second_scenario':
                 total_elapsed_time_ccv_second_scenario += sc['elapsedTime']
-            elif sc['scenario']=='ccv_third_if_part_scenario':
+            elif sc['scenario'] == 'ccv_third_if_part_scenario':
                 total_elapsed_time_ccv_third_if_part_scenario += sc['elapsedTime']
-            elif sc['scenario']=='ccv_third_else_part_scenario':
+            elif sc['scenario'] == 'ccv_third_else_part_scenario':
                 total_elapsed_time_ccv_third_else_part_scenario += sc['elapsedTime']
-            elif sc['scenario']=='ccv_fourth_scenario':
+            elif sc['scenario'] == 'ccv_fourth_scenario':
                 total_elapsed_time_ccv_fourth_scenario += sc['elapsedTime']
-            elif sc['scenario']=='ccv_fifth_scenario':
+            elif sc['scenario'] == 'ccv_fifth_scenario':
                 total_elapsed_time_ccv_fifth_scenario += sc['elapsedTime']
 
-        print(f"elapsed time 1st scenario={round(total_elapsed_time_1st_scenario,6)}")
+        print(f"elapsed time 1st scenario={round(total_elapsed_time_1st_scenario, 6)}")
         print(f"elapsed time 2nd scenario={round(total_elapsed_time_ccv_second_scenario, 6)}")
         print(f"elapsed time third if part scenario={round(total_elapsed_time_ccv_third_if_part_scenario, 6)}")
         print(f"elapsed time third else part scenario={round(total_elapsed_time_ccv_third_else_part_scenario, 6)}")

@@ -125,7 +125,7 @@ class Logout(MethodResource, Resource):
 class DeleteUser(MethodResource, Resource):
     @doc(description='Users', tags=['Users'])
     #@check_for_session
-    def get(self,email):
+    def delete(self,email):
         user = User.query.filter_by(email=email).first()
         db.session.delete(user)
         db.session.commit()

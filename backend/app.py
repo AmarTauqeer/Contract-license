@@ -79,10 +79,10 @@ docs.register(Login)
 # api.add_resource(Logout, '/contract/logout/')
 # docs.register(Logout)
 
-#
-# api.add_resource(DeleteUser, '/contract/delete_user/<string:email>/')
-# docs.register(DeleteUser)
-#
+
+api.add_resource(DeleteUser, '/contract/delete_user/<string:email>/')
+docs.register(DeleteUser)
+
 # api.add_resource(AllUsers, '/contract/get_all_user/')
 # docs.register(AllUsers)
 #
@@ -94,12 +94,12 @@ docs.register(Login)
 api.add_resource(Contracts, '/contract/list_of_contracts/')
 docs.register(Contracts)
 
-api.add_resource(GetDaliccLicense, '/contract/list_of_licenses/')
-docs.register(GetDaliccLicense)
+api.add_resource(DaliccLicense, '/contract/list_of_licenses/')
+docs.register(DaliccLicense)
 
-api.add_resource(GetDaliccLicenseById,
+api.add_resource(DaliccLicenseById,
                  '/contract/licenseById/<string:licenseID>/')
-docs.register(GetDaliccLicenseById)
+docs.register(DaliccLicenseById)
 
 api.add_resource(ContractByContractor,
                  '/contract/byContractor/<string:contractorID>/')
@@ -270,8 +270,8 @@ api.add_resource(ContractStatusUpdateById,
                  '/contract/status/<string:contractID>/<string:status>/')
 docs.register(ContractStatusUpdateById)
 
-api.add_resource(GetContractCompliance, '/contract/compliance/')
-docs.register(GetContractCompliance)
+api.add_resource(ContractCompliance, '/contract/compliance/')
+docs.register(ContractCompliance)
 
 # api.add_resource(ContractApiTest.test_get_all_contracts, '/contract/tests/')
 # docs.register(ContractApiTest.test_get_all_contracts)

@@ -7,7 +7,7 @@ from core.security.RsaAesEncryption import RsaAesEncrypt
 from resources.validation_shacl_insert_update import ValidationShaclInsertUpdate
 
 
-class GetDaliccLicense(MethodResource, Resource):
+class DaliccLicense(MethodResource, Resource):
     @doc(description='Dalicc Licenses', tags=['Dalicc Licenses'])
     # @check_for_session
     # @Credentials.check_for_token
@@ -17,7 +17,7 @@ class GetDaliccLicense(MethodResource, Resource):
         # print(result["results"]['bindings'])
         return x.json()
 
-class GetDaliccLicenseById(MethodResource, Resource):
+class DaliccLicenseById(MethodResource, Resource):
     @doc(description='Dalicc License by Id', tags=['Dalicc Licenses'])
     # @check_for_session
     # @Credentials.check_for_token
