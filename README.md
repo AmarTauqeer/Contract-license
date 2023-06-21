@@ -26,6 +26,9 @@ python -m flask run
 
 ```
 
+## GDPR contract compliance verification UI
+- https://www.youtube.com/watch?v=PkZfFXdVEp8&ab_channel=AmarTauqeer
+
 ## Important Note For Testing REST Endpoints
 - For hasContractStatus choose from the list (statusCreated, statusUpdate)
 - For hasStates choose from the list (statePending, stateInvalid, stateValid)
