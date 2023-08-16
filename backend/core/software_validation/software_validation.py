@@ -77,14 +77,14 @@ class SoftwareValidation(QueryEngine):
 
 
             ############## end encryption ########################
-            print(f"softwareid={SoftwareId}, Name ={Name}, description={Description}, licenseId={LicenseId}")
+            # print(f"softwareid={SoftwareId}, Name ={Name}, description={Description}, licenseId={LicenseId}")
             if SoftwareId != "":
                 # delete from knowledge graph
                 response = self.post_sparql(self.get_username(), self.get_password(),
                                             self.delete_software_by_id(SoftwareId))
 
                 # insert into kg
-                print(f"Name ={Name}, description={Description}, licenseId={LicenseId}")
+                # print(f"Name ={Name}, description={Description}, licenseId={LicenseId}")
                 respone = self.post_sparql(self.get_username(), self.get_password(),
                                            self.insert_query_software(SoftwareId=SoftwareId,
                                                                        Name=Name, Description=Description,

@@ -21,36 +21,15 @@ shacl_file = shapes
 
 def prefix():
     prefix = textwrap.dedent("""@prefix base: <http://ontologies.atb-bremen.de/smashHitCore#> .
-        @prefix owl: <http://www.w3.org/2002/07/owl#> .
-        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-        @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-        @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-        @prefix schema: <http://schema.org/> .
-        @prefix fibo-fbc-fe-fse: <https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/> .
-        @prefix dct: <http://purl.org/dc/terms/> .
-        @prefix dpv-gdpr: <http://www.w3.org/ns/dpv-gdpr#> .
-        @prefix fibo-fnd-agr-ctr: <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> .
-        @prefix dcat: <http://www.w3.org/ns/dcat#> .
-        @prefix gconsent: <https://w3id.org/GConsent#> .
-        @prefix prov: <http://www.w3.org/ns/prov#> .
-        @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-        @prefix rdf4j: <http://rdf4j.org/schema/rdf4j#> .
-        @prefix fibo-der-dc-dma: <https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/> .
-        @prefix fibo-fnd-trext-reatr: <https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/> .
-        @prefix gn: <http://www.geonames.org/ontology#> .
-        @prefix dpv: <http://www.w3.org/ns/dpv#> .
-        @prefix consent: <http://purl.org/adaptcentre/openscience/ontologies/consent#> .
-        @prefix fibo-loan-loant-mloan: <https://spec.edmcouncil.org/fibo/ontology/LOAN/LoanTypes/MortgageLoans/> .
-        @prefix LCC: <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .
-        @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-        @prefix fibo-fnd-plc-loc: <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/> .
-        @prefix time: <http://www.w3.org/2006/time#> .
-        @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-        @prefix fibo-fbc-dae-dbt: <https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/> .
-        @prefix dc: <http://purl.org/dc/elements/1.1/> .
-        @prefix sh: <http://www.w3.org/ns/shacl#> .
-        @prefix ex: <http://example.com/ns#> .
-
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            @prefix schema: <http://schema.org/> .
+            @prefix dct: <http://purl.org/dc/terms/> .
+            @prefix fibo-fnd-agr-ctr: <https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/> .
+            @prefix prov: <http://www.w3.org/ns/prov#> .
+            @prefix time: <http://www.w3.org/2006/time#> .
+            @prefix dc: <http://purl.org/dc/elements/1.1/> .
+            @prefix sh: <http://www.w3.org/ns/shacl#> .
+            @prefix ex: <http://example.com/ns#> .
     """)
     return prefix
 
@@ -62,7 +41,7 @@ class ValidationShaclInsertUpdate(MethodResource, Resource):
                                        conttype=None, oblstate=None, consstate=None, purpose=None, enddate=None,
                                        exedate=None, effecdate=None, desc=None, createdate=None, fulfillmentdate=None,
                                        consValue=None, country=None, role=None, email=None, address=None, phone=None,
-                                       territory=None, vat=None, softwareid=None, licenseid=None):
+                                       territory=None, vat=None, softwareid=None, licenseid=None, version=None):
         if case == "termtypes":
             data_graph = """
                             {0}
@@ -84,9 +63,11 @@ class ValidationShaclInsertUpdate(MethodResource, Resource):
                             base:{1} a dc:Software;
                             base:hasName "{2}";
                             dct:description "{3}";
-                            base:licenseId "{4}".
-                            """.format(prefix(), softwareid, name, desc, licenseid)
+                            base:licenseID "{4}";
+                            dc:hasVersion "{5}".
+                            """.format(prefix(), softwareid, name, desc, licenseid, version)
 
+            # print(data_graph)
             d = Graph().parse(data=data_graph, format="turtle")
             s = Graph().parse(data=shacl_file, format="turtle")
             conforms, report, message = validate(d, shacl_graph=s, advanced=True, debug=False)

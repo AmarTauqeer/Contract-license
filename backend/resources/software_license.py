@@ -111,7 +111,7 @@ class SoftwareCreate(MethodResource, Resource):
         uuidOne = uuid.uuid1()
         software_id = "software_" + str(uuidOne)
         validation_result = ValidationShaclInsertUpdate.validation_shacl_insert_update(self, case="software", softwareid=software_id, name=data['Name'],
-                                                        desc=data['Description'], licenseid=data['LicenseId'])
+                                                        desc=data['Description'], licenseid=data['LicenseId'], version=data['VersionInfo'])
         if 'sh:Violation' in validation_result['software_violoations']:
             return  validation_result['software_violoations']
 
@@ -168,14 +168,15 @@ class SoftwareUpdate(MethodResource, Resource):
         result = SoftwareById.get(self, software_id)
         my_json = result.data.decode('utf8')
         decoded_data = json.loads(my_json)
-        print(decoded_data)
+        # print(decoded_data)
         if decoded_data != 'No record available for this software id':
             if decoded_data['softwareId'] == software_id:
 
                 validation_result = ValidationShaclInsertUpdate.validation_shacl_insert_update(self, case="software",
                                                                                                softwareid=software_id,
                                                                                                name=decoded_data['name'],
-                                                                                               desc=decoded_data['description'])
+                                                                                               desc=decoded_data['description'],
+                                                                                               version=decoded_data['versionInfo'])
                 if 'sh:Violation' in validation_result['software_violoations']:
                     return validation_result['software_violoations']
 
