@@ -94,7 +94,7 @@ schema:ObligationShape
 	];
 	sh:property[
 		sh:path base:hasStates;
-		sh:in (base:statePending base:stateViolated base:stateInvalid)
+		sh:in (base:statePending base:stateViolated base:stateInvalid base:stateFulfilled)
 	].
 schema:ContractorShape
 	a sh:NodeShape;

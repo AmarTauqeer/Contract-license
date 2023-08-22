@@ -40,5 +40,5 @@
                             fibo-fnd-agr-ctr:hasEffectiveDate "2023-06-20T14:15:37"^^xsd:dateTime;
                             fibo-fnd-agr-ctr:hasExecutionDate "2023-06-20T14:15:37"^^xsd:dateTime ;
                             base:hasStates base:statePending;
-                            base:currentDateTime "2023-08-16T13:58:03"^^xsd:dateTime .
+                            base:currentDateTime "2023-08-17T14:28:06"^^xsd:dateTime .
                             

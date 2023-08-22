@@ -394,7 +394,7 @@ class ContractCreate(MethodResource, Resource):
             signature_data = SignatureById.get(self, sig)
             if signature_data.json != "No recrod found for this ID":
                 data_json = signature_data.json
-                print(data_json)
+                # print(data_json)
                 digital_signature = data_json["digitalSignature"]
                 contractor_id = data_json["contractorId"]
                 obj_sig = DigitalSignature()
@@ -438,7 +438,7 @@ class ContractCreate(MethodResource, Resource):
                                                                                        purpose=data['Purpose'],
                                                                                        )
 
-        # print(validation_result['obligation_violoations'])
+        print(validation_result['contract_violoations'])
 
         if 'sh:Violation' in validation_result['contract_violoations']:
             return validation_result['contract_violoations']

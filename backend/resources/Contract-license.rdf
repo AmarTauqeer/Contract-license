@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns="http://ontologies.atb-bremen.de/smashHitCore#"
+	xmlns:agg="http://jena.apache.org/ARQ/function/aggregate#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:geof="http://www.opengis.net/def/function/geosparql/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:spif="http://spinrdf.org/spif#"
+	xmlns:path="http://www.ontotext.com/path#"
+	xmlns:prov-o="%20https://www.w3.org/TR/prov-o#"
+	xmlns:apf="http://jena.apache.org/ARQ/property#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:dpv-gdpr="http://www.w3.org/ns/dpv-gdpr#"
+	xmlns:rep="http://www.openrdf.org/config/repository#"
+	xmlns:gconsent="https://w3id.org/GConsent#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:wgs="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:list="http://jena.apache.org/ARQ/list#"
+	xmlns:consent="http://purl.org/adaptcentre/openscience/ontologies/consent#"
+	xmlns:LCC="https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+	xmlns:campaneo="http://www.semanticweb.org/CampaNeo/ontologies/2020/4/"
+	xmlns:geoext="http://rdf.useekm.com/ext#"
+	xmlns:fibo-fnd-plc-loc="https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"
+	xmlns:sesame="http://www.openrdf.org/schema/sesame#"
+	xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+	xmlns:fibo-fbc-dae-dbt="https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"
+	xmlns:grddl="http://www.w3.org/2003/g/data-view#"
+	xmlns:sail="http://www.openrdf.org/config/sail#"
+	xmlns:OntoSensor="http://mmisw.org/ont/univmemphis/sensor#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:fn="http://www.w3.org/2005/xpath-functions"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:mapper="http://www.ontotext.com/mapper/"
+	xmlns:fibo-fbc-fe-fse="https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"
+	xmlns:security="http://ontologies.atb-bremen.de/security#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:array="http://www.w3.org/2005/xpath-functions/array"
+	xmlns:fibo-fnd-agr-ctr="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/"
+	xmlns:dcat="http://www.w3.org/ns/dcat#"
+	xmlns:map="http://www.w3.org/2005/xpath-functions/map"
+	xmlns:prov="http://www.w3.org/ns/prov#"
+	xmlns:sr="http://www.openrdf.org/config/repository/sail#"
+	xmlns:rdf4j="http://rdf4j.org/schema/rdf4j#"
+	xmlns:fibo-der-dc-dma="https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/"
+	xmlns:fibo-fnd-trext-reatr="https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/"
+	xmlns:gn="http://www.geonames.org/ontology#"
+	xmlns:afn="http://jena.apache.org/ARQ/function#"
+	xmlns:dpv="http://www.w3.org/ns/dpv#"
+	xmlns:fibo-loan-loant-mloan="https://spec.edmcouncil.org/fibo/ontology/LOAN/LoanTypes/MortgageLoans/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:ofn="http://www.ontotext.com/sparql/functions/"
+	xmlns:graphdb="http://www.ontotext.com/config/graphdb#"
+	xmlns:time="http://www.w3.org/2006/time#"
+	xmlns:omgeo="http://www.ontotext.com/owlim/geo#"
+	xmlns:odrl="http://www.w3.org/ns/odrl/2/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_type_77d87fd0-40de-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#TermTypes"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#Obligation"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#Obligation"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_f4ea1680-40e0-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#TermsAndConditions"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_15cf48d4-40e1-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#Signature"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_282a0ca8-40e1-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#Signature"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#contb2c_dc9f74ea-40e4-11ee-98e2-b3450d37b12a">
+	<rdf:type rdf:resource="https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/Contract"/>
+	<rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:value>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_type_77d87fd0-40de-11ee-98e2-b3450d37b12a">
+	<dct:description>BPf4u226yq0mcV2gbvgD9vuUojaOh1t+kjDZT7eQpQrygCFwooG9MSwycPnQQ9a2</dct:description>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<dct:description>pivvtKgswpFzi/o/xypMZ219Fl3sCPVr6eexEsnsAIj2HvN+mINcPvvkPUzO6o8V</dct:description>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<dct:description>ZMKo8cBMJw/dAUp13gyrk8v+mzaBpS5hhe9ypcA/h/C0N4F3GE//G/pPOAwKZfm70hZjalit9HIgM+zkE2Vmbo/DAeJ54l1vyWZVitRs9L0=</dct:description>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_f4ea1680-40e0-11ee-98e2-b3450d37b12a">
+	<dct:description>term for data sharing or processing</dct:description>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#contb2c_dc9f74ea-40e4-11ee-98e2-b3450d37b12a">
+	<dct:description>Data sharing between Scott and Amar Tauqeer</dct:description>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_type_77d87fd0-40de-11ee-98e2-b3450d37b12a">
+	<hasCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 10:59:25.796000+00:00</hasCreationDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<hasCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:25:09.937000+00:00</hasCreationDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<hasCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:25:09.937000+00:00</hasCreationDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:24:58.699000+00:00</hasCreationDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:24:58.699000+00:00</hasCreationDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_f4ea1680-40e0-11ee-98e2-b3450d37b12a">
+	<hasCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:41:24.524000+00:00</hasCreationDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_15cf48d4-40e1-11ee-98e2-b3450d37b12a">
+	<hasCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:42:36.181000+00:00</hasCreationDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_282a0ca8-40e1-11ee-98e2-b3450d37b12a">
+	<hasCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:42:36.181000+00:00</hasCreationDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_type_77d87fd0-40de-11ee-98e2-b3450d37b12a">
+	<hasName>YrpLSyOF+aSujvSenvjPvXrhlYfSLlZvLA24jFsdcFIkm/K4mp4h7Lwchorb2xx4</hasName>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<hasName>Company ABC</hasName>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<hasName>Dummy company</hasName>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasName>kfQtq9tNwtt7zXjIDH20I11WwGl1V0VKoJg+XOcTy44=</hasName>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasName>vty+xJsS87klB5P/38tG1uEAfZxiV5fsFh471tgEosQ=</hasName>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_type_77d87fd0-40de-11ee-98e2-b3450d37b12a">
+	<termTypeID>term_type_77d87fd0-40de-11ee-98e2-b3450d37b12a</termTypeID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<hasCountry>Austria</hasCountry>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<hasCountry>Austria</hasCountry>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasCountry>nb6JEf4+GGrrbE34/IPsW22/CLHrnm2kYkjtmKQBvCc=</hasCountry>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasCountry>Yt2lAvCm09RdsEcRgdIgsmu54oHWM7c8OdYJVNLN0zY=</hasCountry>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<hasEmail>companyABC@gmail.com</hasEmail>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<hasEmail>dummy@gmail.com</hasEmail>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasEmail>KWpUtYUcyAVqLWkQRmuymkXjbXHZzN0gRi1i/7VrOb52k//vr8A5kQMtnuRRT9qH</hasEmail>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasEmail>Q1qTZbqZpNWzxm/RvIVmIXtYhSbfqi3eSblnA3apBAsClrx038U4dCrx450eg+NA</hasEmail>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<hasPostalAddress>Technikerstrasse 009</hasPostalAddress>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<hasPostalAddress>Technikerstrasse 22</hasPostalAddress>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasPostalAddress>mjijaQ5shosCbjGQkAWMmZuez19FIpECVliNWE1eq22bEbgzhWFSzXx8XNmEAox/</hasPostalAddress>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasPostalAddress>5N9PI96afG5fk1SSMtwZwlJk+j7NI2qWMtxu1R2U+MBJSUgNa22NG8LKCV6/TRcP</hasPostalAddress>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<hasTelephone>+4309876544</hasTelephone>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<hasTelephone>+4309876500</hasTelephone>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasTelephone>2JXiY/1ZOM0HV8TBbCP7pDtT1uhHfgIaP/Rg/nbytHY=</hasTelephone>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasTelephone>03Iz/yo3TYff2dytCpwJKmQM6+0yRg5YMkVMSR4+JJw=</hasTelephone>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<hasTerritory>Innsbruck</hasTerritory>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<hasTerritory>Innsbruck</hasTerritory>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasTerritory>Msj0mgC5VtwPD6Je7phAD7CvOxmT38MHJjDzXRnNFJ8=</hasTerritory>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasTerritory>njmRrlRzBs1CFgf2D0AZ+97DtzSZQbOiP4lKGuR4gUI=</hasTerritory>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<hasVATIN>00000</hasVATIN>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<hasVATIN>111111</hasVATIN>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasVATIN>859j6IuPLWVAo/23/OAelWRSToUTLDN/dk4LlZbDvDA=</hasVATIN>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasVATIN>VYUCbvBaMLjk8YjUGz0cyujqsWKesvRmBeCTA/Yf1Ec=</hasVATIN>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_d2770c68-40de-11ee-98e2-b3450d37b12a">
+	<companyID>cm_d2770c68-40de-11ee-98e2-b3450d37b12a</companyID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#cm_083c09f2-40df-11ee-98e2-b3450d37b12a">
+	<companyID>cm_083c09f2-40df-11ee-98e2-b3450d37b12a</companyID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasRole rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#DataSubject"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasRole rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#DataController"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<contractorID>c_42203094-40df-11ee-98e2-b3450d37b12a</contractorID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<contractorID>c_7f434b1e-40df-11ee-98e2-b3450d37b12a</contractorID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<contractorID>c_42203094-40df-11ee-98e2-b3450d37b12a</contractorID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<contractorID>c_7f434b1e-40df-11ee-98e2-b3450d37b12a</contractorID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_15cf48d4-40e1-11ee-98e2-b3450d37b12a">
+	<contractorID>c_42203094-40df-11ee-98e2-b3450d37b12a</contractorID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_282a0ca8-40e1-11ee-98e2-b3450d37b12a">
+	<contractorID>c_7f434b1e-40df-11ee-98e2-b3450d37b12a</contractorID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a">
+	<hasCompany>cm_083c09f2-40df-11ee-98e2-b3450d37b12a</hasCompany>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a">
+	<hasCompany>cm_d2770c68-40de-11ee-98e2-b3450d37b12a</hasCompany>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<fibo-fnd-agr-ctr:hasExecutionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-08-22 11:24:48.804000+00:00</fibo-fnd-agr-ctr:hasExecutionDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<fibo-fnd-agr-ctr:hasExecutionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-08-22 11:24:48.804000+00:00</fibo-fnd-agr-ctr:hasExecutionDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#contb2c_dc9f74ea-40e4-11ee-98e2-b3450d37b12a">
+	<fibo-fnd-agr-ctr:hasExecutionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:44:19.022000+00:00</fibo-fnd-agr-ctr:hasExecutionDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:24:48.804000+00:00</hasEndDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-07-22 11:24:48.804000+00:00</hasEndDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#contb2c_dc9f74ea-40e4-11ee-98e2-b3450d37b12a">
+	<hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-22 11:44:19.022000+00:00</hasEndDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<hasStates rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#stateFulfilled"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<hasStates rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#stateViolated"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<obligationID>ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a</obligationID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<obligationID>ob_ade9f534-40e0-11ee-98e2-b3450d37b12a</obligationID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<fulfillmentDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:24:48.804000+00:00</fulfillmentDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<fulfillmentDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-08-22 11:24:48.804000+00:00</fulfillmentDate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a">
+	<hasContractIdB2C></hasContractIdB2C>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a">
+	<hasContractIdB2C></hasContractIdB2C>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#term_f4ea1680-40e0-11ee-98e2-b3450d37b12a">
+	<hasTermTypes>term_type_77d87fd0-40de-11ee-98e2-b3450d37b12a</hasTermTypes>
+	<hasObligations rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#ob_66f6d62e-40e0-11ee-98e2-b3450d37b12a"/>
+	<hasObligations rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#ob_ade9f534-40e0-11ee-98e2-b3450d37b12a"/>
+	<termID>term_f4ea1680-40e0-11ee-98e2-b3450d37b12a</termID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_15cf48d4-40e1-11ee-98e2-b3450d37b12a">
+	<hasSignature>sf7h8FM+WMSU29xsij8DAfERX3huKO9AsSeXgNSStfk=</hasSignature>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_282a0ca8-40e1-11ee-98e2-b3450d37b12a">
+	<hasSignature>gLKBDT8KVoPztOSw6bvZpEKaef28tUvjBOlMtmA0IWI=</hasSignature>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_15cf48d4-40e1-11ee-98e2-b3450d37b12a">
+	<signatureID>sig_15cf48d4-40e1-11ee-98e2-b3450d37b12a</signatureID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_282a0ca8-40e1-11ee-98e2-b3450d37b12a">
+	<signatureID>sig_282a0ca8-40e1-11ee-98e2-b3450d37b12a</signatureID>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_15cf48d4-40e1-11ee-98e2-b3450d37b12a">
+	<hasDigitalSignature>6be690c100f7a42ff6024ceaf0f4cf699bd44ca8d42f200e1e804edd5ab68c708297772fb82b1a54a96ff769bc5ee0b21135e8b683398e076a8abdbfaf3ed24115923cde83cd8664cffc9ffc9933b8916224b7cd5ccfdd4ae52f75a330993f1780dd33524698e46e874d1736eab232322ab18f3ee61bb643fac82d0cc26e2ad0298f50b71fbbb6ca115506010cb0e42fff7676b58708ab96c0e6ce0a7b803b5ff89a22cd9706c373b6e08eb4d216e4655a4f7ac7466355b978d6107a3e69ebb4a5c7e28a2c3e13c513edc2d8219b3e9158a044c3ca3a1ee950f2cdf76c6a41f510b190e3eaafd750477393aa11c3e23d5115dcab9bf4097757800136cee1d6dc</hasDigitalSignature>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#sig_282a0ca8-40e1-11ee-98e2-b3450d37b12a">
+	<hasDigitalSignature>417c21e8a0eddcc4db6a71bc46a664bec70683ed4a05608f972a9d8ea9aea6bc9c4fdc245667d0de5a7c832419c1059f1f036c2a593cb43fe136c1f3d747e1f8c78afb49f5baf27d1e65c9dcd767da0b69796addc4fe38380524aec5160687f4fde91829de5ab61f74e9dac5dfd5c97bd5aa77065e41fce5873467041b1261c2817f7869b7a4d5491cfa2c337811663bd07f6120a6d10644d7e243f755a880bebb1dfeb3ebfdd580fb4c6c7497d48b7fd520125c7060b7bd3cc00a87295f65cf304480244bdde9aed72a896944cac2d9630c21754ae8a17481b55c954407bc53670708cf5d4fc38fcf650660d5e8f94a4f22893d11da30ceb87033d4c1f5e446</hasDigitalSignature>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://ontologies.atb-bremen.de/smashHitCore#contb2c_dc9f74ea-40e4-11ee-98e2-b3450d37b12a">
+	<contractType rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#Written"/>
+	<forPurpose>Data sharing between Scott and Amar Tauqeer</forPurpose>
+	<hasContractCategory rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#categoryBusinessToConsumer"/>
+	<hasContractStatus rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#statusCreated"/>
+	<inMedium>online</inMedium>
+	<fibo-fnd-agr-ctr:hasEffectiveDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-22 11:44:19.022000+00:00</fibo-fnd-agr-ctr:hasEffectiveDate>
+	<consentID></consentID>
+	<contractID>contb2c_dc9f74ea-40e4-11ee-98e2-b3450d37b12a</contractID>
+	<hasContractors rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#c_42203094-40df-11ee-98e2-b3450d37b12a"/>
+	<hasContractors rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#c_7f434b1e-40df-11ee-98e2-b3450d37b12a"/>
+	<hasSignatures rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#sig_15cf48d4-40e1-11ee-98e2-b3450d37b12a"/>
+	<hasSignatures rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#sig_282a0ca8-40e1-11ee-98e2-b3450d37b12a"/>
+	<hasTerms rdf:resource="http://ontologies.atb-bremen.de/smashHitCore#term_f4ea1680-40e0-11ee-98e2-b3450d37b12a"/>
+	<licenseID></licenseID>
+</rdf:Description>
+
+</rdf:RDF>
