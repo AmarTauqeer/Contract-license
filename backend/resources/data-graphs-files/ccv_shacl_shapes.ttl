@@ -55,6 +55,7 @@ schema:CCV1stScenarioShape a sh:NodeShape ;
      $this base:hasEndDate ?edate .
      $this base:currentDateTime ?cdate .
      $this base:hasContractStatus ?cstatus .
+     $this base:licenseId ?license .
     FILTER ((?state=base:statePending) && (?cdate > ?edate) && (?cstatus IN (base:statusCreated, base:statusUpdated, base:statusPending)))
     }
     ''' ;
@@ -85,6 +86,7 @@ schema:CCVSecondScenarioShape a sh:NodeShape ;
      $this base:hasContractStatus ?contractStatus .
      $this base:hasStates ?state .
      $this base:hasConsentState ?consentState .
+     $this base:licenseId ?license .
      FILTER ((?consentState IN ("Invalid","Expired")) && (?contractStatus IN (base:statusCreated, base:statusUpdated, base:statusPending)))
     }
     ''' ;
@@ -116,6 +118,7 @@ schema:CCVthirdScenarioIfPartShape a sh:NodeShape ;
      $this base:hasContractStatus ?contractStatus .
      $this base:hasStates ?state .
      $this base:hasConsentState ?consentState .
+     $this base:licenseId ?license .
      FILTER ((?consentState IN ("Invalid","Expired")) && (?contractStatus IN (base:statusCreated, base:statusUpdated, base:statusPending)))
     }
     ''' ;
@@ -146,6 +149,7 @@ schema:CCVThirdScenarioElsePartShape a sh:NodeShape ;
      $this base:hasEndDate ?edate .
      $this base:currentDateTime ?cdate .
      $this base:hasContractStatus ?cstatus .
+     $this base:licenseId ?license .
     FILTER ((?state=base:statePending) && (?cdate > ?edate) && (?cstatus IN (base:statusCreated, base:statusUpdated, base:statusPending)))
     }
     ''' ;
@@ -176,6 +180,7 @@ schema:CCVFourthScenarioShape a sh:NodeShape ;
      $this base:hasEndDate ?edate .
      $this base:currentDateTime ?cdate .
      $this base:hasContractStatus ?cstatus .
+     $this base:licenseId ?license .
     FILTER ((?state=base:statePending) && (?cdate > ?edate) && (?cstatus IN (base:statusCreated, base:statusUpdated, base:statusPending)))
     }
     ''' ;
@@ -204,6 +209,7 @@ schema:CCVFifthScenarioShape a sh:NodeShape ;
     WHERE {
      $this base:hasContractStatus ?contractStatus .
      $this base:hasConsentState ?consentState .
+     $this base:licenseId ?license .
      FILTER ((?consentState IN ("Invalid","Expired")) && (?contractStatus IN (base:statusCreated, base:statusUpdated, base:statusPending)))
     }
     ''' ;
