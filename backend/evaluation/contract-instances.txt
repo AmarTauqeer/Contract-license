@@ -1,6 +1,7 @@
 ============================
 {
   "ConsentId": "const_001",
+  "LicenseId": "The MIT License",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -24,6 +25,7 @@
 ===============================
 {
   "ConsentId": "",
+  "LicenseId": "Academic Free License 3.0",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -48,6 +50,7 @@
 ===============================
 {
   "ConsentId": "const_001",
+  "LicenseId": "The MIT License",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -71,6 +74,7 @@
 ===============================
 {
   "ConsentId": "const_001",
+  "LicenseId": "The MIT License",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -94,6 +98,7 @@
 ===============================
 {
   "ConsentId": "",
+  "LicenseId": "Academic Free License 3.0",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -118,6 +123,7 @@
 ===============================
 {
   "ConsentId": "const_001",
+  "LicenseId": "Academic Free License 3.0",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -141,6 +147,7 @@
 ===============================
 {
   "ConsentId": "const_001",
+  "LicenseId": "The MIT License",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -164,6 +171,7 @@
 ===============================
 {
   "ConsentId": "",
+  "LicenseId": "The MIT License",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -188,6 +196,7 @@
 ===============================
 {
   "ConsentId": "",
+  "LicenseId": "The MIT License",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
@@ -212,6 +221,7 @@
 ===============================
 {
   "ConsentId": "const_001",
+  "LicenseId": "The MIT License",
   "ConsiderationDescription": "data sharing between scott and Company ABC",
   "ConsiderationValue": 400,
   "ContractCategory": "categoryBusinessToConsumer",
