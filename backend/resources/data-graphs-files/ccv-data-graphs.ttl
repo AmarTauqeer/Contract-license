@@ -61,7 +61,8 @@ fibo-fnd-agr-ctr:hasEffectiveDate "2022-09-07T10:38:07"^^xsd:dateTime;
 fibo-fnd-agr-ctr:hasExecutionDate "2022-09-07T10:38:07"^^xsd:dateTime ;
 base:hasStates base:stateViolated;
 base:currentDateTime "2023-02-27T11:12:17"^^xsd:dateTime;
-base:hasConsentState "empty" .
+base:hasConsentState "empty";
+base:licenseId "The MIT License" .
 
 base:contb2b_e45dc546-2e9e-11ed-be7d-3f8589292a29 a base:CCV1st;
 base:contractType base:Written;
@@ -73,7 +74,8 @@ fibo-fnd-agr-ctr:hasEffectiveDate "2022-09-07T10:38:07"^^xsd:dateTime;
 fibo-fnd-agr-ctr:hasExecutionDate "2022-09-07T10:38:07"^^xsd:dateTime ;
 base:hasStates base:statePending;
 base:currentDateTime "2023-02-27T11:12:17"^^xsd:dateTime;
-base:hasConsentState "empty" .
+base:hasConsentState "empty";
+base:licenseId "The MIT License" .
 
 base:contb2c_51e561c2-2ed2-11ed-be7d-3f8589292a29 a base:CCVThirdIf;
 base:contractType base:Written;

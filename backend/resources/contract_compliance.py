@@ -57,7 +57,7 @@ class ContractCompliance(MethodResource, Resource):
             my_json = get_term.data.decode('utf-8')
             data = json.loads(my_json)
             print(data)
-            if data!="No record available for this term id":
+            if data != "No record available for this term id":
                 term_id = data['termId']
 
             # get contract by term
@@ -124,7 +124,8 @@ class ContractCompliance(MethodResource, Resource):
                                                purpose=b2b_data['purpose'], contcategory=b2b_data['contractCategory'],
                                                contstatus=b2b_contract_status, enddate=iso_date_b2b_edate,
                                                effecdate=iso_date_b2b_effdate, exedate=iso_date_b2b_exdate,
-                                               oblstate=obl_state, currentdate=current_date_time, consstate=consent))
+                                               oblstate=obl_state, currentdate=current_date_time, consstate=consent,
+                                               license=b2b_data['licenseId']))
 
                 # actual check to detect violation
                 if current_date_time >= date_time_obj and obl_state == 'statePending' \
@@ -170,7 +171,7 @@ class ContractCompliance(MethodResource, Resource):
                                                contstatus=b2b_contract_status, enddate=iso_date_b2b_edate,
                                                effecdate=iso_date_b2b_effdate, exedate=iso_date_b2b_exdate,
                                                oblstate=obl_state, consstate=consent_state,
-                                               currentdate=current_date_time))
+                                               currentdate=current_date_time, license=b2b_data['licenseId']))
 
                 # actual check for expiration
                 if consent_state in ['Invalid', 'Expired'] and b2b_contract_status \
@@ -222,7 +223,7 @@ class ContractCompliance(MethodResource, Resource):
                                                contstatus=b2c_contract_status, enddate=iso_date_b2c_edate,
                                                effecdate=iso_date_b2c_effdate, exedate=iso_date_b2c_exdate,
                                                oblstate=obl_state, consstate=consent_state,
-                                               currentdate=current_date_time))
+                                               currentdate=current_date_time, license=b2c_data['licenseId']))
 
                 if consent_state in ['Invalid', 'Expired'] and b2c_contract_status \
                         not in ('statusViolated', 'statusTerminated', 'statusExpired'):
@@ -259,7 +260,7 @@ class ContractCompliance(MethodResource, Resource):
                                                    effecdate=iso_date_b2c_effdate,
                                                    exedate=iso_date_b2c_exdate,
                                                    oblstate=obl_state, consstate=consent_state,
-                                                   currentdate=current_date_time))
+                                                   currentdate=current_date_time, license=b2b_data['licenseId']))
 
                     # current_date_time = date(2023, 4, 24)
                     if current_date_time >= date_time_obj and obl_state == 'statePending' \
@@ -297,7 +298,8 @@ class ContractCompliance(MethodResource, Resource):
                                                purpose=b2c_data['purpose'], contcategory=b2c_data['contractCategory'],
                                                contstatus=b2c_contract_status, enddate=iso_date_b2c_edate,
                                                effecdate=iso_date_b2c_effdate, exedate=iso_date_b2c_exdate,
-                                               oblstate=obl_state, currentdate=current_date_time, consstate=consent))
+                                               oblstate=obl_state, currentdate=current_date_time, consstate=consent,
+                                               license=b2c_data['licenseId']))
 
                 # print(b2c_data)
                 if current_date_time >= date_time_obj and obl_state == 'statePending' \
@@ -358,6 +360,7 @@ class ContractCompliance(MethodResource, Resource):
                                         c_obj1 = ContractByContractId.get(self, contractIdB2C)
                                         c_obj1 = c_obj1.json
                                         consent_id = c_obj1['consentId']
+                                        license_id= c_obj1['licenseId']
 
                                         if consent_id != '':
                                             consent_state = CCVHelper.get_consent_state(self, consent_id)
@@ -369,7 +372,8 @@ class ContractCompliance(MethodResource, Resource):
                                                                            contid=c_obj1['contractId'],
                                                                            contstatus=b2c_contract_status,
                                                                            consstate=consent_state,
-                                                                           currentdate=current_date_time))
+                                                                           currentdate=current_date_time,
+                                                                           license=license_id))
 
                                             end = timer()
                                             elapsed_time = {

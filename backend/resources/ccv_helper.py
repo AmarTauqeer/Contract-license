@@ -64,7 +64,7 @@ def prefix():
 class CCVHelper(MethodResource, Resource):
 
     def shacl_validation(self, contid=None, contstatus=None, contcategory=None, conttype=None, oblstate=None,
-                         consstate=None, purpose=None, enddate=None, exedate=None, effecdate=None, scenario=None,
+                         consstate=None, license=None, purpose=None, enddate=None, exedate=None, effecdate=None, scenario=None,
                          currentdate=None):
         if scenario == "ccv_fourth_scenario":
             data_graph = """
@@ -78,9 +78,10 @@ class CCVHelper(MethodResource, Resource):
                             fibo-fnd-agr-ctr:hasEffectiveDate "{7}"^^xsd:dateTime;
                             fibo-fnd-agr-ctr:hasExecutionDate "{8}"^^xsd:dateTime ;
                             base:hasStates base:{9};
-                            base:currentDateTime "{10}"^^xsd:dateTime .
+                            base:currentDateTime "{10}"^^xsd:dateTime;
+                            base:licenseId "{11}".
                             """.format(prefix(), contid, conttype, purpose, contcategory, contstatus,
-                                       enddate, effecdate, exedate, oblstate, currentdate)
+                                       enddate, effecdate, exedate, oblstate, currentdate,license)
             # print(data_graph)
             ## create data graph file for validation
             main_directory = f"{rootpath.detect()}/resources/data-graphs-files"
@@ -122,9 +123,10 @@ class CCVHelper(MethodResource, Resource):
                             fibo-fnd-agr-ctr:hasExecutionDate "{8}"^^xsd:dateTime;
                             base:hasStates base:{9};
                             base:hasConsentState "{10}";
-                            base:currentDateTime "{11}"^^xsd:dateTime .
+                            base:currentDateTime "{11}"^^xsd:dateTime;
+                            base:licenseId "{12}".
                             """.format(prefix(), contid, conttype, purpose, contcategory, contstatus,
-                                       enddate, effecdate, exedate, oblstate, consstate, currentdate)
+                                       enddate, effecdate, exedate, oblstate, consstate, currentdate, license)
 
             # print(data_graph)
             ## create data graph file for validation
@@ -164,9 +166,10 @@ class CCVHelper(MethodResource, Resource):
                             fibo-fnd-agr-ctr:hasExecutionDate "{8}"^^xsd:dateTime;
                             base:hasStates base:{9};
                             base:hasConsentState "{10}";
-                            base:currentDateTime "{11}"^^xsd:dateTime .
+                            base:currentDateTime "{11}"^^xsd:dateTime;
+                            base:licenseId "{12}".
                             """.format(prefix(), contid, conttype, purpose, contcategory, contstatus,
-                                       enddate, effecdate, exedate, oblstate, consstate, currentdate)
+                                       enddate, effecdate, exedate, oblstate, consstate, currentdate, license)
 
             # print(data_graph)
             ## create data graph file for validation
@@ -206,10 +209,11 @@ class CCVHelper(MethodResource, Resource):
                             fibo-fnd-agr-ctr:hasExecutionDate "{8}"^^xsd:dateTime ;
                             base:hasStates base:{9};
                             base:hasConsentState "{10}";
-                            base:currentDateTime "{11}"^^xsd:dateTime .
+                            base:currentDateTime "{11}"^^xsd:dateTime;
+                            base:licenseId "{12}".
 
                             """.format(prefix(), contid, conttype, purpose, contcategory, contstatus,
-                                       enddate, effecdate, exedate, oblstate, consstate, currentdate)
+                                       enddate, effecdate, exedate, oblstate, consstate, currentdate, license)
 
             # print(data_graph)
             ## create data graph file for validation
@@ -249,10 +253,11 @@ class CCVHelper(MethodResource, Resource):
             fibo-fnd-agr-ctr:hasExecutionDate "{8}"^^xsd:dateTime ;
             base:hasStates base:{9};
             base:currentDateTime "{10}"^^xsd:dateTime;
-            base:hasConsentState "{11}" .
+            base:hasConsentState "{11}";
+            base:licenseId "{12}".
 
             """.format(prefix(), contid, conttype, purpose, contcategory, contstatus, enddate,
-                       effecdate, exedate, oblstate, currentdate, consstate)
+                       effecdate, exedate, oblstate, currentdate, consstate, license)
 
             print(data_graph)
             ## create data graph file for validation
@@ -285,9 +290,10 @@ class CCVHelper(MethodResource, Resource):
             base:{1} a base:CCVFifth;
             base:hasContractStatus base:{2};
             base:hasConsentState "{3}";
-            base:currentDateTime "{4}"^^xsd:dateTime .
+            base:currentDateTime "{4}"^^xsd:dateTime;
+            base:licenseId "{5}".
 
-            """.format(prefix(), contid, contstatus, consstate, currentdate)
+            """.format(prefix(), contid, contstatus, consstate, currentdate, license)
 
             # print(data_graph)
             ## create data graph file for validation
